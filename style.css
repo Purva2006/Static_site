@@ -185,41 +185,7 @@ html {
     font-style: normal;
   }
   
-  [class^="w-icon-"], [class*=" w-icon-"] {
-    speak: none;
-    font-variant: normal;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    font-family: webflow-icons !important;
-  }
   
-  .w-icon-slider-right:before {
-    content: "î˜€";
-  }
-  
-  .w-icon-slider-left:before {
-    content: "î˜";
-  }
-  
-  .w-icon-nav-menu:before {
-    content: "î˜‚";
-  }
-  
-  .w-icon-arrow-down:before, .w-icon-dropdown-toggle:before {
-    content: "î˜ƒ";
-  }
-  
-  .w-icon-file-upload-remove:before {
-    content: "î¤€";
-  }
-  
-  .w-icon-file-upload-icon:before {
-    content: "î¤ƒ";
-  }
   
   * {
     box-sizing: border-box;
@@ -7356,7 +7322,7 @@ html {
     justify-self: end;
   }
   
-  #w-node-_1976eec2-2137-229d-f3cb-bbcd46ea6aa2-95effeba, #w-node-eb094ce3-0c7d-a8b6-9358-13f8df086987-95effeba, #w-node-c43e9dce-0a70-b22e-619a-e4b7fe416303-95effeba {
+ #w-node-_1976eec2-2137-229d-f3cb-bbcd46ea6aa2-95effeba, #w-node-eb094ce3-0c7d-a8b6-9358-13f8df086987-95effeba, #w-node-c43e9dce-0a70-b22e-619a-e4b7fe416303-95effeba {
     grid-area: Area;
   }
   
@@ -7644,56 +7610,5 @@ html {
     }
   }
   
-  @media screen and (max-width: 479px) {
-    #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effead, #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effeba, #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effebc {
-      grid-area: 1 / 1 / 2 / 3;
-    }
-  }
-  
-  @font-face {
-    font-family: 'Ppneuemontreal';
-    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f350_ppneuemontreal-bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Ppneuemontreal';
-    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f354_ppneuemontreal-medium.otf') format('opentype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Ppneuemontreal';
-    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f353_ppneuemontreal-book.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Ppneuemontreal';
-    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f358_ppneuemontreal-thin.otf') format('opentype');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Ppneuemontreal';
-    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f357_ppneuemontreal-semibolditalic.otf') format('opentype');
-    font-weight: 600;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Marsstandard';
-    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f359_marsstandard-regular.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  :is(.intro-heading-wrapper, .intro-content-wrapper).start {
-    opacity: 1;
-    transition: opacity 0.3s ease-out;
-}
+ 
+ 
