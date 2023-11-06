@@ -127,7 +127,7 @@ svg path, svg ellipse, svg rect {
     -moz-transition: fill .4s;
     transition: fill .4s;
 }
-@media screen and (max-width: 725px){
+@media screen and (max-width: 768px){
 
 .sl-col, .sl-col:nth-child(3n), .sl-col:nth-child(2n), .sl-col:last-child {
     width: 100%;
@@ -167,7 +167,6 @@ svg path, svg ellipse, svg rect {
 .solutions {
     padding-top: 20px;
 }
-
 }
 
 
