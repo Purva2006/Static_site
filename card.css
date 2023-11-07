@@ -448,3 +448,6 @@ svg path, svg ellipse, svg rect {
         transform: rotate(360deg);
     }
 }
+.elementor-widget-container img{
+    width: 50%;
+}
