@@ -64,6 +64,10 @@
     width: 100%;
     height: auto;
   }
+  .fx-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(228px,2fr));
+  }
   .sl-box:hover .sl-overlay, .sl-box.active .sl-overlay, .swiper-slide-active .sl-overlay {
     opacity: 1;
     height: 100%;
@@ -208,7 +212,7 @@
     height: auto;
   }
   .sl-box {
-    width: 13%;
+    width: 62%;
     margin-right: 1.5%;
     text-align: center;
     margin-bottom: 1.125vw;
@@ -280,10 +284,19 @@
   width: 50%
 }
 @media (max-width:768px) {
-  .fx-wrap .sd-pad {
+  /* .fx-wrap .sd-pad {
     grid-template-columns: repeat(2, minmax(170px, 2fr));
     gap: 0;
     margin-top: 66px;
     width: 100% !important
+} */
+.fx-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(133px,2fr));
+}
+.sl-box {
+  width: 56%;
+  height: 30.875vw;
 }
 }
+

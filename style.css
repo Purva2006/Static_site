@@ -1271,16 +1271,22 @@ line-height: 19px;
 
 
 
-@media (max-width: 640px){
-  h1{
+@media screen and (max-width: 768px) {
+  h1 {
     font-size: 7.5em;
   }
-  .intro-content-text{
+  .intro-content-text {
     font-size: 45px;
   }
   .intro-sub-wrapper {
     max-width: 58.75rem;
+  }
+  .container {
+    justify-content: center;
+    align-items: center;
+  }
 }
+<<<<<<< Updated upstream
 .container {
   justify-content: center;
   align-items: center;
@@ -1982,3 +1988,5 @@ svg path, svg ellipse, svg rect {
 
 }
 
+=======
+>>>>>>> Stashed changes
