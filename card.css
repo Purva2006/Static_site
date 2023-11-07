@@ -3294,7 +3294,7 @@ html {
   .menu-btn {
     width: 3.75rem;
     height: 3.75rem;
-    background-color: var(--tech-green);
+    background-color: #9eff00;
     background-image: url("https://assets-global.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f35d_Line%20Icons%20UI%20(2).svg");
     background-position: 50%;
     background-repeat: no-repeat;
@@ -3304,11 +3304,11 @@ html {
   }
   
   .menu-btn:hover {
-    background-color: var(--white);
+    background-color:white;
   }
   
   .menu-btn.w--open {
-    background-color: var(--tech-green);
+    background-color: #9eff00;
     background-image: url("https://assets-global.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f379_close-icon.svg");
     background-position: 50%;
     background-repeat: no-repeat;
@@ -8132,3 +8132,12 @@ html {
     }
   }
    */
+
+
+   .w-container {
+    position: relative;
+    padding-left: var(--pp1);
+    padding-right: var(--pp1);
+    width: 100%;
+    max-width: var(--mw1);
+}
