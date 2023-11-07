@@ -1989,6 +1989,21 @@ svg path, svg ellipse, svg rect {
 
 }
 
+@media (max-width: 820px){
+  .section--intro {
+    height: 50vh !important;
+    padding: 6rem 1.5rem 2rem !important;
+
+}
+h1{
+  font-size: 30px;
+
+}
+.intro-content-text{
+  font-size: 17px;
+
+}
+}
 
 
 
