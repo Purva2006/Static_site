@@ -1,0 +1,302 @@
+
+
+
+.providers-section {
+    width: auto;
+    height: 400px;
+    background-color: #0e2f29;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 0;
+    position: relative;
+    overflow: hidden;
+}
+.black-gradient.inviz {
+    z-index: 6;
+    height: 150px;
+    background-image: linear-gradient(to bottom,#0f302a,rgba(14,47,41,0) 60%);
+    display: block;
+}
+
+.black-gradient {
+    z-index: 3;
+    height: 115px;
+    opacity: .97;
+    display: block;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: 0%;
+    right: 0%;
+}
+.black-gradient.flip {
+    z-index: 10;
+    height: 200px;
+    background-image: linear-gradient(to bottom,#0e2f29,rgba(14,47,41,0) 37%);
+    display: block;
+    top: auto;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    transform: rotate(180deg);
+}
+.container.no-margin.no-right {
+    padding-left: 60px;
+    padding-right: 0;
+}
+.container.no-margin {
+    max-width: 1680px;
+    padding-top: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    position: relative;
+}
+.tabs-main {
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+}
+
+.w-tabs {
+    position: relative;
+}
+.w-tabs:before, .w-tabs:after {
+    content: " ";
+    grid-area: 1/1/2/2;
+    display: table;
+}
+.tabs-menu._65 {
+    margin-right: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.tabs-menu {
+    z-index: 5;
+    width: 50%;
+    height: 100%;
+    color: #000102;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 60px;
+    padding-top: 200px;
+    display: flex;
+}
+.tab-link-tab-1.w--current {
+    z-index: 10;
+    color: white;
+    background-color: transparent;
+    border-left-style: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 100%;
+}
+.partners-main {
+    position: relative;
+}
+.arrow-link.absolut {
+    position: absolute;
+    top: auto;
+    bottom: 3%;
+    left: auto;
+    right: -21%;
+}
+.arrow-link {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+.image-93 {
+    width: 100%;
+    height: 100%;
+}
+._56-heading.white {
+    color: white;
+    letter-spacing: -.5px;
+    line-height: 120%;
+}
+
+._56-heading {
+    color: #0f302a;
+    text-align: left;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 102%;
+    position: relative;
+}
+.greenspan._120 {
+    font-size: 120px;
+    line-height: 100%;
+}
+
+.greenspan {
+    -webkit-text-fill-color: transparent;
+    background-image: url(https://assets-global.website-files.com/6111234…/61824fb…_Rectangle%20165.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: none;
+}
+.tabs-content {
+    z-index: 3;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+.w-tab-content {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.tab-pane-tab-1 {
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.w--tab-active {
+    display: block;
+}
+.w-tab-pane {
+    /* / display: none; / */
+    position: relative;
+}
+.link-block-11 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.providers-wrapper {
+    width: 655px;
+    height: 100%;
+    text-align: left;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    display: flex;
+    position: relative;
+    overflow: visible;
+}
+.samples-container.shadows.right {
+    justify-content: center;
+    overflow: visible;
+}
+
+.samples-container.shadows {
+    z-index: 9;
+    justify-content: center;
+    margin-top: 0%;
+}
+.samples-container {
+    z-index: 3;
+    height: 100%;
+    min-width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position: relative;
+    top: 0%;
+    bottom: 0%;
+    left: auto;
+    right: auto;
+    overflow: hidden;
+    transform: rotate(0);
+}
+
+.sample-set-4 {
+    width: 28%;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    transform: skew(0deg)
+}
+.provider {
+    width: 174px;
+    height: 78px;
+    background-color: white;
+    filter: grayscale();
+    border: 1px solid rgba(253,253,253,.16);
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    display: flex
+}
+.image-17 {
+    width: auto;
+    max-width: 120%
+}
+.sample-set-4.up {
+    width: 28%;
+    height: 100%;
+    margin-top: 25px;
+    padding-top: 0
+}
+.greenspan {
+    -webkit-text-fill-color: transparent;
+    background-image: url(https://assets-global.website-files.com/61112348aee4848e30506466/61824fbb7c8e74eb52b6274f_Rectangle%20165.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: none
+}
+
+.greenspan._120 {
+    font-size: 120px;
+    line-height: 100%
+}
+.providers-link {
+    z-index: 10;
+    display: block;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%
+}
+.providers-link.prov {
+    display: block
+}
+.providers-section.no-bottom {
+    width: auto;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: 0;
+}
+
