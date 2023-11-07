@@ -1271,16 +1271,22 @@ line-height: 19px;
 
 
 
-@media (max-width: 640px){
-  h1{
+@media screen and (max-width: 768px) {
+  h1 {
     font-size: 7.5em;
   }
-  .intro-content-text{
+  .intro-content-text {
     font-size: 45px;
   }
   .intro-sub-wrapper {
     max-width: 58.75rem;
+  }
+  .container {
+    justify-content: center;
+    align-items: center;
+  }
 }
+<<<<<<< Updated upstream
 .container {
   justify-content: center;
   align-items: center;
@@ -1297,6 +1303,283 @@ line-height: 19px;
   .intro-content-text{
     font-size: 45px;
   }
+  
+  .bg-video {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+  }
+  
+  .intro-content-wrapper {
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    display: flex;
+  }
+  
+ 
+  .container-line {
+    z-index: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-grey);
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  
+  #w-node-_1976eec2-2137-229d-f3cb-bbcd46ea6aa2-95effebc, #w-node-eb094ce3-0c7d-a8b6-9358-13f8df086987-95effebc, #w-node-c43e9dce-0a70-b22e-619a-e4b7fe416303-95effebc {
+    grid-area: Area;
+  }
+  
+  #w-node-a0a1bd7a-164f-c7c9-4a0d-ba0cff358cee-95effebc {
+    grid-area: span 1 / span 2 / span 1 / span 2;
+    align-self: stretch;
+    justify-self: stretch;
+  }
+  
+  #w-node-_1630eee8-4c37-90a1-273a-682dfceaba04-95effebc {
+    grid-area: Area;
+    align-self: stretch;
+  }
+  
+  #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effebc {
+    grid-area: Area-2;
+  }
+  
+  #w-node-_17f3cd6c-cf0c-21ff-24f8-bbde9b6702aa-95effebc {
+    align-self: stretch;
+    justify-self: stretch;
+  }
+  
+  #w-node-_6b4c1486-0194-5756-7402-760b3c2106e1-95effebc {
+    grid-area: Area;
+    align-self: stretch;
+  }
+  
+  #w-node-_3399144c-fcbb-a2fb-fea8-c03b02cbe8ed-95effebc {
+    grid-area: Area-2;
+  }
+  
+  #w-node-_1da1aefb-6b20-7f65-f9d1-fc3eeae80255-95effebc, #w-node-_95304a11-688a-3221-7b2f-ea2ceeeef178-95effebc {
+    align-self: stretch;
+    justify-self: stretch;
+  }
+  
+  #w-node-_73e14a6b-88cf-7cbb-d3bc-4fd1e1015159-95effebc {
+    grid-area: Area-2;
+  }
+  
+  #w-node-f909df3d-216c-ccdb-6a32-cfaa8db09291-95effebc {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+    align-self: end;
+    justify-self: end;
+  }
+  
+  #w-node-b5943ba1-9df9-71ef-84ec-557af6576014-95effebc {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+  }
+  
+  #w-node-f28f570c-4688-91f5-9240-e0096aa724dc-95effebc {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+    justify-self: start;
+  }
+  
+  #w-node-_3db831df-5a2f-e5ea-1ce2-a45e65baa4ba-95effebc {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+  }
+  
+  #w-node-_6421603e-0ce9-df84-6575-305597a16766-95effebc {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+    align-self: start;
+  }
+  
+  #w-node-_8095115a-a1ef-095a-efbf-156e84aae3a3-95effebc {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+    align-self: start;
+    justify-self: end;
+  }
+  
+  #w-node-a6ed5529-3301-1853-888d-baed49e63f76-95effebc {
+    grid-area: Text-Area;
+    justify-self: center;
+  }
+  
+  #w-node-b5cc9e0b-7e08-5388-0b6c-4b56ba016610-95effebc {
+    align-self: stretch;
+    justify-self: center;
+  }
+  
+  @media screen and (max-width: 991px) {
+    #w-node-_1630eee8-4c37-90a1-273a-682dfceaba04-95effead {
+      grid-area: 1 / 2 / 2 / 3;
+      justify-self: end;
+    }
+  
+    #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effead {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  
+    #w-node-_6b4c1486-0194-5756-7402-760b3c2106e1-95effead {
+      grid-area: 1 / 2 / 2 / 3;
+      align-self: start;
+      justify-self: end;
+    }
+  
+    #w-node-_3399144c-fcbb-a2fb-fea8-c03b02cbe8ed-95effead {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  
+    #w-node-_95304a11-688a-3221-7b2f-ea2ceeeef178-95effead {
+      grid-area: 1 / 3 / 2 / 2;
+      justify-self: end;
+    }
+  
+    #w-node-_73e14a6b-88cf-7cbb-d3bc-4fd1e1015159-95effead {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  
+    #w-node-d1a665d6-f80f-7b5c-2d25-ec9ab18ff41e-b18ff40a {
+      grid-area: span 1 / span 4 / span 1 / span 4;
+    }
+  
+    #w-node-d1a665d6-f80f-7b5c-2d25-ec9ab18ff427-b18ff40a {
+      grid-area: span 1 / span 2 / span 1 / span 2;
+      align-self: center;
+      justify-self: start;
+    }
+  
+    #w-node-_1630eee8-4c37-90a1-273a-682dfceaba04-95effeba {
+      grid-area: 1 / 2 / 2 / 3;
+      justify-self: end;
+    }
+  
+    #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effeba {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  
+    #w-node-_6b4c1486-0194-5756-7402-760b3c2106e1-95effeba {
+      grid-area: 1 / 2 / 2 / 3;
+      align-self: start;
+      justify-self: end;
+    }
+  
+    #w-node-_3399144c-fcbb-a2fb-fea8-c03b02cbe8ed-95effeba {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  
+    #w-node-_95304a11-688a-3221-7b2f-ea2ceeeef178-95effeba {
+      grid-area: 1 / 3 / 2 / 2;
+      justify-self: end;
+    }
+  
+    #w-node-_73e14a6b-88cf-7cbb-d3bc-4fd1e1015159-95effeba {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  
+    #w-node-_998f73f1-dcdc-a3ef-656f-43f15b36ce9d-95effeba {
+      grid-area: span 1 / span 4 / span 1 / span 4;
+    }
+  
+    #w-node-_998f73f1-dcdc-a3ef-656f-43f15b36cea6-95effeba {
+      grid-area: span 1 / span 2 / span 1 / span 2;
+      align-self: center;
+      justify-self: start;
+    }
+  
+    #w-node-_1630eee8-4c37-90a1-273a-682dfceaba04-95effebc {
+      grid-area: 1 / 2 / 2 / 3;
+      justify-self: end;
+    }
+  
+    #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effebc {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  
+    #w-node-_6b4c1486-0194-5756-7402-760b3c2106e1-95effebc {
+      grid-area: 1 / 2 / 2 / 3;
+      align-self: start;
+      justify-self: end;
+    }
+  
+    #w-node-_3399144c-fcbb-a2fb-fea8-c03b02cbe8ed-95effebc {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  
+    #w-node-_95304a11-688a-3221-7b2f-ea2ceeeef178-95effebc {
+      grid-area: 1 / 3 / 2 / 2;
+      justify-self: end;
+    }
+  
+    #w-node-_73e14a6b-88cf-7cbb-d3bc-4fd1e1015159-95effebc {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  }
+  
+  @media screen and (max-width: 479px) {
+    #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effead, #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effeba, #w-node-d4e3b276-dfce-7995-da55-f006f0472cc6-95effebc {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  }
+  
+  @font-face {
+    font-family: 'Ppneuemontreal';
+    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f350_ppneuemontreal-bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Ppneuemontreal';
+    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f354_ppneuemontreal-medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Ppneuemontreal';
+    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f353_ppneuemontreal-book.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Ppneuemontreal';
+    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f358_ppneuemontreal-thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Ppneuemontreal';
+    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f357_ppneuemontreal-semibolditalic.otf') format('opentype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Marsstandard';
+    src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f359_marsstandard-regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :is(.intro-heading-wrapper, .intro-content-wrapper).start {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+
+
+
+
+
   .intro-sub-wrapper {
     max-width: 58.75rem;
 }
@@ -1706,3 +1989,5 @@ svg path, svg ellipse, svg rect {
 
 }
 
+=======
+>>>>>>> Stashed changes
