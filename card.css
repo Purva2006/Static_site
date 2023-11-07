@@ -8132,3 +8132,12 @@ html {
     }
   }
    */
+
+
+   .w-container {
+    position: relative;
+    padding-left: var(--pp1);
+    padding-right: var(--pp1);
+    width: 100%;
+    max-width: var(--mw1);
+}
