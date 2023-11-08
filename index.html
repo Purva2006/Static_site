@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
 
     <script>
@@ -258,6 +259,31 @@
 
   </head>
   <body>
+
+    <nav>
+
+      <ul class="sidebar">
+          <li onclick="hideshow()"><a><i class="fa-solid fa-xmark fa-fade"></i></a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">our work</a></li>
+          <li><a href="#">partners</a></li>
+          <li><a href="#">services</a></li>
+          <li><a href="#">contact</a></li>
+
+      </ul>
+      <ul>
+          <li class="img_header"><img src="/assets/images/logo.png" width="40" height="40"></li>
+          <li class="hidemobile"><a href="#">Home</a></li>
+          <li class="hidemobile"><a href="#">About</a></li>
+          <li class="hidemobile"><a href="#">our work</a></li>
+          <li class="hidemobile"><a href="#">partners</a></li>
+          <li class="hidemobile"><a href="#">services</a></li>
+          <li class="hidemobile"><a href="#">contact</a></li>
+          <li class="menu_bar" onclick="showsidebar()"><a><i class="fa-solid fa-bars fa-fade"></i></a></li>
+
+      </ul>
+  </nav>
    
 
     <!-- Home Section -->
@@ -1404,7 +1430,16 @@ function outputBasedOnDevice() {
     updateElementsDisplay();
   });
 </script>
-
+<script>
+  function showsidebar(){
+      const side = document.querySelector('.sidebar')
+      side.style.display='flex'
+  }
+  function hideshow(){
+      const side = document.querySelector('.sidebar')
+      side.style.display='none'
+  }
+</script>
 
 
   </body>
