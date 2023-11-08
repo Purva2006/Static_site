@@ -1717,13 +1717,7 @@ svg path, svg ellipse, svg rect {
   margin-bottom: 3.063vw;
   overflow: hidden;
 }
-.sl-graphic {
-  width: 100%;
-  position: relative;
-  height: 22.75vw;
-  text-align: center;
-  overflow: hidden;
-}
+
 .sl-link {
   display: block;
   height: 100%;
@@ -1732,7 +1726,7 @@ svg path, svg ellipse, svg rect {
 .sl-box-video * {
   -webkit-border-radius: 2.188vw;
   -moz-border-radius: 2.188vw;
-  border-radius: 2.188vw;
+  border-radius: 0.188vw;
 }
 .vd-wrap {
   position: relative;
@@ -1740,11 +1734,7 @@ svg path, svg ellipse, svg rect {
 }.sl-box-video .vd-content {
   padding-bottom: 85%;
 }
-.sl-box-video * {
-  -webkit-border-radius: 2.188vw;
-  -moz-border-radius: 2.188vw;
-  border-radius: 2.188vw;
-}
+
 .vd-content {
   padding-bottom: 56.25%;
   position: relative;
@@ -1837,7 +1827,7 @@ svg path, svg ellipse, svg rect {
 .sl-graphic {
   width: 100%;
   position: relative;
-  height: 22.75vw;
+  height: 21.70vw;
   text-align: center;
   overflow: hidden;
 }.sl-link {
@@ -1876,11 +1866,7 @@ svg path, svg ellipse, svg rect {
   top: 0;
   left: 0;
 }
-.sl-box-video * {
-  -webkit-border-radius: 2.188vw;
-  -moz-border-radius: 2.188vw;
-  border-radius: 2.188vw;
-}
+
 @media screen and (max-width: 768px){
 
 .sl-col {
