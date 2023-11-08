@@ -3222,6 +3222,8 @@ width: 100%;
 /* second css */
 
 
+
+
 /* card css */
 .shapeMover1{
   position: absolute;
@@ -3684,6 +3686,7 @@ hr {
 
 .con_card{
   padding: 30px;
+  /* background-color: #1e212b; */
 }
 
 
