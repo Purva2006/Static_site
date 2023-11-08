@@ -2897,6 +2897,10 @@ width: auto;
 .text-field-3,.message.contacts{
 width: 100%;
 }
+.w-background-video {
+  height: 500px;
+  width: 500px;
+}
 }
 
 
@@ -3208,8 +3212,6 @@ width: 100%;
 /* second css */
 
 
-
-
 /* card css */
 .shapeMover1{
   position: absolute;
@@ -3294,9 +3296,10 @@ footer {
   width: 120px;
 }
 .main {
-  margin: 50px;
+  margin-left: 50px;
+    margin-right: 50px;
   padding-top: 20px;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
   display: grid;
   gap: 50px;
   grid-template-columns: repeat(4, 1fr);
@@ -3422,7 +3425,23 @@ hr {
 .copyright p {
   padding: 20px;
 }
-
+@media (max-width: 768px) {
+  .main {
+    gap: 0;
+  }
+  .row{
+    margin-top: 0;
+  }
+  .footer-header{
+    margin-bottom: 10px;
+  }
+  .link-des{
+    gap: 5px;
+  }
+  .footer-header h3{
+    font-size: 25px;
+  }
+}
 /* casino css */
 .desk-blocks {
   flex-direction: column;
@@ -3672,7 +3691,6 @@ hr {
 
 .con_card{
   padding: 30px;
-  /* background-color: #1e212b; */
 }
 
 
