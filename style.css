@@ -1289,10 +1289,10 @@ line-height: 19px;
     align-items: center;
   }
 }
-.container {
+/* .container {
   justify-content: center;
   align-items: center;
-}
+} */
 
 
 
@@ -3280,7 +3280,7 @@ width: 100%;
 .shapeMover1{
   position: absolute;
   top: -266px;
-  left: -588px;
+  left: -258px;
    -webkit-animation-duration:9s;
     animation-duration: 9s;
     -webkit-animation-name:shapeMover1;
