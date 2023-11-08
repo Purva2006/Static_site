@@ -3255,9 +3255,9 @@ footer {
   position: relative;
   width: 100%;
   height: 100%;
-  top: 350px;
+  /* top: 350px; */
   border-top-left-radius: 70px;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 960px) {
@@ -3315,7 +3315,7 @@ footer {
   margin-top: 50px;
 }
 .footer-header {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 20px;
 }
 
