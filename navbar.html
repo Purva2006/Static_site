@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/card.css" />
+  </head>
+  <body>
+    <div
+      data-animation="default"
+      data-collapse="all"
+      data-duration="400"
+      data-easing="ease"
+      data-easing2="ease"
+      role="banner"
+      class="nav w-nav"
+    >
+      <div class="css w-embed">
+        <style>
+          /*WIZARDRY*/
+
+          body {
+            min-height: 0vw;
+            font-size: calc(0.8928571428571429vw + 0.2em);
+            text-rendering: geometricPrecision;
+          }
+          /* Max Font Size */
+          @media screen and (min-width: 1920px) {
+            body {
+              font-size: 1.3333333333333335em;
+            }
+          }
+          @media (min-width: 1820px) and (max-height: 900px) {
+            body {
+              font-size: 1.13333333333333335em;
+            }
+          }
+          /* Min Font Size */
+          @media screen and (max-width: 991px) {
+            body {
+              font-size: calc(0.20181634712411706vw + 0.925em);
+            }
+          }
+
+          .container {
+            max-width: 84em;
+          }
+
+          /*BG Video Mask*/
+          .bg-video-embed {
+            aspect-ratio: 16/11;
+          }
+          @media (min-width: 992px) and (max-width: 1550px) {
+            .bg-video-embed {
+              height: 70em;
+            }
+          }
+
+          /*BUTTONS*/
+
+          .tooltip {
+            left: var(--mouseX);
+          }
+          .last .tooltip {
+            left: auto;
+            right: calc(100% - var(--mouseX));
+          }
+          .last .tooltip {
+            left: auto;
+            right: calc(100% - var(--mouseX));
+          }
+          /*Horiztonal Scroll*/
+
+          .horizontal-sticky main::-webkit-scrollbar {
+            display: none;
+          }
+          @media (min-height: 1200px) {
+            .content-grid.mb--wire {
+              margin-bottom: 30vh;
+            }
+          }
+          /* Hide scrollbar for IE, Edge and Firefox */
+          .horizontal-sticky main {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+          }
+
+          /*Principle scroller*/
+          @media (min-width: 992px) {
+            .principle-btn {
+              writing-mode: vertical-rl;
+            }
+          }
+
+          .principle-btn-wrapper.open ~ .principle-btn-wrapper {
+            color: var(--circuit-blue);
+            background: var(--tech-green);
+          }
+          .principle-btn-wrapper.open ~ .principle-btn-wrapper:hover {
+            background: #83d302;
+          }
+          .principle:not(.open) .principle__content {
+            opacity: 0;
+          }
+
+          .principle {
+            transition-delay: 0.08s;
+          }
+
+          .principle.open {
+            transition-delay: 0;
+          }
+
+          .arrow-button.back img {
+            transform: rotate(180deg);
+          }
+
+          /*company*/
+          .company-item:first-child .company-item__img-wrapper {
+            background-color: #9eff00;
+          }
+
+          .company-item__img-wrapper {
+            pointer-events: none;
+          }
+
+          .company-item:hover .company-item__img-wrapper {
+            opacity: 0;
+          }
+
+          .slider-button.left img {
+            transform: rotate(180deg);
+          }
+          .company-pagination-btn.less.hide + .company-pagination-btn {
+            border-radius: 0.75rem;
+            border-left-style: solid;
+          }
+          /*global reach*/
+          .global-reach__count {
+            display: inline-block;
+            position: relative;
+            min-width: 0.75em;
+            text-align: right;
+          }
+
+          .w-nav-link.w--current {
+            color: var(--tech-green) !important;
+          }
+
+          .section--charcoal .container-line {
+            background-color: var(--mid--grey);
+          }
+
+          /* Media Cards */
+
+          .media-category-list
+            .media-category-wrapper:last-child
+            .media-category {
+            border-radius: 0 12px 12px 0;
+          }
+          .media-category.fltr-active {
+            pointer-events: none;
+          }
+
+          .media-categories > .media-category {
+            border-radius: 12px 0px 0px 12px;
+          }
+
+          .media-item-wrapper:hover
+            :is(
+              .media-item__category-wrapper,
+              .media-item__heading,
+              .media-item__summary
+            ) {
+            color: #fff;
+          }
+
+          @media (max-width: 991px) {
+            .nav-button .button__arrow {
+              display: none;
+            }
+
+            .menu-btn.w--open ~ .nav-button .button__bkg {
+              display: none !important;
+              background-color: var(--tech-green) !important;
+            }
+
+            .menu-btn.w--open ~ .nav-button .button {
+              color: var(--digital-charcoal);
+              background-color: var(--tech-green);
+            }
+
+            .menu-btn.w--open {
+              background-color: white;
+            }
+            .nav__button {
+              height: 3.375rem;
+            }
+          }
+
+          @media (max-width: 767px) {
+            .nav__button {
+              height: 3.375rem;
+            }
+          }
+
+          .nav-button:hover .button__bkg {
+            display: none !important;
+          }
+
+          .nav-button:hover .nav-button {
+            color: black !important;
+          }
+
+          .nav-button:hover .button--wrapper {
+            background-color: var(--tech-green);
+          }
+
+          .nav-button:hover .button__arrow {
+            filter: invert(1);
+          }
+
+          [scrollbar="none"]::-webkit-scrollbar {
+            display: none;
+          }
+
+          [scrollbar="none"] {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+          }
+
+          .hide {
+            display: none;
+          }
+        </style>
+      </div>
+
+      <div class="page_code_utilities w-embed">
+        <link
+          rel="stylesheet"
+          href="https://dl.dropboxusercontent.com/scl/fi/6gdjwaizsv1osirvzjmqv/lumos-spacing.css?rlkey=0t3s5r0ksoexnl17c0fjvv33z&amp;dl=0"
+        />
+        <link
+          rel="stylesheet"
+          href="https://www.dropbox.com/scl/fi/6gdjwaizsv1osirvzjmqv/lumos-spacing.css?rlkey=0t3s5r0ksoexnl17c0fjvv33z&amp;dl=0"
+        />
+        <style>
+          /* UTILITY STYLES */
+
+          /* defaults */
+          * {
+            --text-stroke-width: 0;
+            -webkit-text-stroke-width: var(--text-stroke-width);
+            --border-radius: 0;
+            border-radius: var(--border-radius);
+            --border-width: 0;
+            border-width: var(--border-width);
+            border-style: solid;
+          }
+
+          /* variables */
+          html {
+            /* Color styles */
+            --tech-green: #9eff00;
+            --circuit-blue: #003a51;
+            --digital-charcoal: #1e212b;
+            --black: #000000;
+            --white: #ffffff;
+            --background: #f8f7f6;
+            --light-grey: #d9d9d9;
+            --mid--grey: #8d9090;
+
+            /* small section padding */
+            --vt1: var(--size3);
+            --vb1: var(--size3);
+            /* medium section padding */
+            --vt2: var(--size5);
+            --vb2: var(--size5);
+            /* large section padding */
+            --vt3: var(--size9);
+            --vb3: var(--size9);
+            /* page padding */
+            --pp1: 3em;
+            /* max width */
+            --mw1: 84em;
+            --mw2: 70em;
+            /* stroke width */
+            --sw1: var(--bw1);
+            --sw2: var(--bw2);
+            /* border radius */
+            --br1: 0.5rem;
+            --br2: 1rem;
+            --br3: 100vw;
+            /* border width */
+            --bw1: 1.5px;
+            --bw2: 3px;
+            /* default grid gap */
+            --default-grid-gap: 1rem;
+            --default-row-gap: var(--default-grid-gap);
+            --default-column-gap: var(--default-grid-gap);
+            /* spacing scale */
+            --spacing-scale: 1;
+          }
+          /* tablet */
+          @media screen and (max-width: 991px) {
+            html {
+              /* page padding */
+              --pp1: 1.5rem;
+              /* spacing scale */
+              --spacing-scale: 0.75;
+            }
+          }
+          /* landscape */
+          @media screen and (max-width: 767px) {
+            html {
+              /* page padding */
+              --pp1: 1.25rem;
+              /* spacing scale */
+              --spacing-scale: 0.5;
+            }
+          }
+          /* portrait */
+          @media screen and (max-width: 479px) {
+            html {
+              /* page padding */
+              --pp1: 1rem;
+            }
+          }
+
+          /* section styles */
+          section,
+          header,
+          footer {
+            position: relative;
+            padding-top: var(--vt2);
+            padding-bottom: var(--vb2);
+          }
+          /* small */
+          [class*="vt1"],
+          [vertical-top="1"] {
+            padding-top: var(--vt1);
+          }
+          [class*="vb1"],
+          [vertical-bottom="1"] {
+            padding-bottom: var(--vb1);
+          }
+          /* medium */
+          [class*="vt2"],
+          [vertical-top="2"] {
+            padding-top: var(--vt2);
+          }
+          [class*="vb2"],
+          [vertical-bottom="2"] {
+            padding-bottom: var(--vb2);
+          }
+          /* large */
+          [class*="vt3"],
+          [vertical-top="3"] {
+            padding-top: var(--vt3);
+          }
+          [class*="vb3"],
+          [vertical-bottom="3"] {
+            padding-bottom: var(--vb3);
+          }
+          /* none */
+          [class*="vt0"],
+          [vertical-top="0"] {
+            padding-top: 0;
+          }
+          [class*="vb0"],
+          [vertical-bottom="0"] {
+            padding-bottom: 0;
+          }
+
+          /* container styles */
+          .w-container {
+            position: relative;
+            padding-left: var(--pp1);
+            padding-right: var(--pp1);
+            width: 100%;
+            max-width: var(--mw1);
+          }
+          /* page padding */
+          [class*="pp1"] {
+            padding-left: var(--pp1);
+            padding-right: var(--pp1);
+          }
+          [class*="pp0"] {
+            padding-left: 0;
+            padding-right: 0;
+          }
+          /* max width */
+          [class*="mw1"] {
+            max-width: var(--mw1);
+          }
+          [class*="mw2"] {
+            max-width: var(--mw2);
+          }
+          [class*="mw0"] {
+            max-width: none;
+          }
+
+          /* stroke width */
+          [class*="sw1"] {
+            --text-stroke-width: var(--sw1);
+          }
+          [class*="sw2"] {
+            --text-stroke-width: var(--sw2);
+          }
+          [class*="sw0"] {
+            --text-stroke-width: 0px;
+          }
+
+          /* border radius */
+          [class*="br1"] {
+            --border-radius: var(--br1);
+          }
+          [class*="br2"] {
+            --border-radius: var(--br2);
+          }
+          [class*="br3"] {
+            --border-radius: var(--br3);
+          }
+          [class*="br0"] {
+            --border-radius: 0rem;
+          }
+
+          /* border width */
+          [class*="bw1"] {
+            border-width: var(--bw1);
+            border-style: solid;
+          }
+          [class*="bw2"] {
+            border-width: var(--bw2);
+            border-style: solid;
+          }
+          [class*="bw0"] {
+            border-width: 0;
+          }
+
+          /* border direction */
+          /**%{{border: top}**/
+          [class*="bw1t"],
+          [class*="bw2t"] {
+            border-bottom-width: 0;
+            border-left-width: 0;
+            border-right-width: 0;
+          } /**}%**/
+
+          /**%{{border: bottom}**/
+          [class*="bw1b"],
+          [class*="bw2b"] {
+            border-top-width: 0;
+            border-left-width: 0;
+            border-right-width: 0;
+          } /**}%**/
+
+          /**%{{border: left}**/
+          [class*="bw1l"],
+          [class*="bw2l"] {
+            border-top-width: 0;
+            border-bottom-width: 0;
+            border-right-width: 0;
+          } /**}%**/
+
+          /**%{{border: right}**/
+          [class*="bw1r"],
+          [class*="bw2r"] {
+            border-top-width: 0;
+            border-bottom-width: 0;
+            border-left-width: 0;
+          } /**}%**/
+
+          /**%{{border: vertical}**/
+          [class*="bw1v"],
+          [class*="bw2v"] {
+            border-left-width: 0;
+            border-right-width: 0;
+          } /**}%**/
+
+          /**%{{border: horizontal}**/
+          [class*="bw1h"],
+          [class*="bw2h"] {
+            border-top-width: 0;
+            border-bottom-width: 0;
+          } /**}%**/
+
+          /* pointer events */
+          [class*="pe0"] {
+            pointer-events: none;
+          }
+          [class*="pe1"] {
+            pointer-events: auto;
+          }
+          /**%{{pointer-events: children}**/
+          [class*="pe2"] {
+            pointer-events: none;
+          }
+          [class*="pe2"] > * {
+            pointer-events: auto;
+          }
+          /**}%**/
+
+          /* icon styles */
+          /**%#**/
+          [class*="ic1"] svg,
+          [class*="ic2"] svg {
+            width: 100% !important;
+            height: 100% !important;
+          }
+          /**#%**/
+          [class*="ic1"] * {
+            fill: currentColor !important;
+          }
+          [class*="ic2"] * {
+            stroke: currentColor !important;
+          }
+
+          /* cover */
+          [class*="cf1"] {
+            width: 100%;
+            height: 100%;
+          }
+          [class*="ca1"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
+        </style>
+      </div>
+
+      <div
+        class="nav__bkg"
+        style="will-change: opacity; opacity: 0.16693"
+      ></div>
+      <div class="container container--nav w-container">
+        <div class="nav-items">
+          <nav
+            role="navigation"
+            class="nav__menu w-nav-menu"
+            style="transform: translateY(0px) translateX(0px)"
+          >
+            <div
+              class="w-layout-blockcontainer container container--menu w-container"
+            >
+              <div class="nav-mobile__header">
+                <a href="/old-home" class="nav-logo mobile w-nav-brand"
+                  ><img
+                    src="https://assets-global.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f356_Netceed%20Logo.svg"
+                    loading="eager"
+                    alt=""
+                /></a>
+                <div class="language-switcher--mobile"></div>
+              </div>
+              <div class="nav__content">
+                <div class="nav__row">
+                  <div class="nav__col-1">
+                    <a
+                      href="/media"
+                      class="nav__link w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Media Center</a
+                    ><a
+                      href="/careers"
+                      class="nav__link w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Careers</a
+                    ><a
+                      href="/privacy"
+                      class="nav__link w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Privacy Policy</a
+                    >
+                  </div>
+                  <div class="nav__col-2">
+                    <a
+                      href="/#who-we-are"
+                      class="nav__link--large w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Who We Are</a
+                    ><a
+                      href="/#how-we-are-different"
+                      class="nav__link--large w-nav-link"
+                      style="max-width: 1292.8px"
+                      >How We’re Different</a
+                    ><a
+                      href="/#our-principles"
+                      class="nav__link--large w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Our Core Principles</a
+                    ><a
+                      href="/#global-reach"
+                      class="nav__link--large w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Global Reach</a
+                    ><a
+                      href="/#capabilities"
+                      class="nav__link--large w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Capabilities</a
+                    ><a
+                      href="/#esg"
+                      class="nav__link--large w-nav-link"
+                      style="max-width: 1292.8px"
+                      >ESG</a
+                    ><a
+                      href="/#our-team"
+                      class="nav__link--large w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Our Team</a
+                    ><a
+                      href="/#our-legacy"
+                      class="nav__link--large w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Our Legacy</a
+                    >
+                  </div>
+                </div>
+                <div class="nav__row last">
+                  <div class="nav__col-1">
+                    <div class="nav__social-links">
+                      <a
+                        href="https://twitter.com/NetceedGlobal"
+                        target="_blank"
+                        class="nav__social-link first w-inline-block"
+                        ><img
+                          src="https://assets-global.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f3c5_Twitter%20X.svg"
+                          loading="lazy"
+                          alt=""
+                          class="social-link__img" /></a
+                      ><a
+                        href="https://www.facebook.com/Netceed.Global/?locale=hi_IN&amp;paipv=0&amp;eav=AfYQOaBHJLhCsF4JRXK-Su2wkHHN3VYFPvLOKxDV9jU6B5eerZgfld219IXPoJhkP6M&amp;_rdr"
+                        target="_blank"
+                        class="nav__social-link w-inline-block"
+                        ><img
+                          src="https://assets-global.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f3c4_Facebook%20F.svg"
+                          loading="lazy"
+                          alt=""
+                          class="social-link__img" /></a
+                      ><a
+                        href="https://www.linkedin.com/company/netceed/"
+                        target="_blank"
+                        class="nav__social-link last w-inline-block"
+                        ><img
+                          src="https://assets-global.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f3c3_Linkedin%20in.svg"
+                          loading="lazy"
+                          alt=""
+                          class="social-link__img"
+                      /></a>
+                      <div class="w-embed">
+                        <style>
+                          .nav__social-link:not(:hover) img {
+                            filter: brightness(10) grayscale(1);
+                          }
+
+                          .nav__social-link:hover img {
+                            filter: none;
+                          }
+                        </style>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nav__col-2">
+                    <a
+                      href="#"
+                      class="nav__link--large--contact w-nav-link"
+                      style="max-width: 1292.8px"
+                      >Get in touch</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="nav__grid hide">
+                <div class="t--flex space-around">
+                  <a
+                    href="/media"
+                    class="nav__link w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Media Center</a
+                  ><a
+                    href="/careers"
+                    class="nav__link w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Careers</a
+                  ><a
+                    href="/privacy"
+                    class="nav__link w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Privacy Policy</a
+                  >
+                </div>
+                <div class="t--first">
+                  <a
+                    href="#who-we-are"
+                    class="nav__link--large w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Who We Are</a
+                  ><a
+                    href="#how-we-are-different"
+                    class="nav__link--large w-nav-link"
+                    style="max-width: 1292.8px"
+                    >How We’re Different</a
+                  ><a
+                    href="#our-principles"
+                    class="nav__link--large w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Our Core Principles</a
+                  ><a
+                    href="#global-reach"
+                    class="nav__link--large w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Global Reach</a
+                  ><a
+                    href="#capabilities"
+                    class="nav__link--large w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Combined Capabilities</a
+                  ><a
+                    href="#esg"
+                    class="nav__link--large w-nav-link"
+                    style="max-width: 1292.8px"
+                    >ESG</a
+                  ><a
+                    href="#our-team"
+                    class="nav__link--large w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Our Team</a
+                  ><a
+                    href="#our-legacy"
+                    class="nav__link--large w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Our Legacy</a
+                  ><a
+                    href="#"
+                    class="nav__link--large--contact mt2-75 w-nav-link"
+                    style="max-width: 1292.8px"
+                    >Get in touch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </nav>
+          <a href="/old-home" class="nav-logo w-nav-brand"
+            ><img
+              src="https://assets-global.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f356_Netceed%20Logo.svg"
+              loading="eager"
+              alt=""
+          /></a>
+          <div class="nav__menu-wrapper">
+            <div class="language-switcher--desktop">
+              <div class="weglot-container weglot_here weglot-container--left">
+                <aside
+                  data-wg-notranslate="true"
+                  aria-label="Language selected: English"
+                  class="weglot_switcher wg-mouse-click country-selector default closed wg-list"
+                >
+                  <div
+                    data-l="en"
+                    role="combobox"
+                    aria-activedescendant=""
+                    aria-label="Language"
+                    tabindex="0"
+                    aria-expanded="false"
+                    aria-controls="weglot-listbox"
+                    class="wg-li en wgcurrent"
+                  >
+                    <a
+                      target="_self"
+                      href="#"
+                      aria-label="EN"
+                      id="weglot-language-en"
+                      tabindex="-1"
+                    ></a>
+                  </div>
+                  <ul role="listbox" id="weglot-listbox">
+                    <li data-l="fr" role="none" id="wg-fr" class="wg-li fr">
+                      <a
+                        role="option"
+                        href="#"
+                        aria-label="FR"
+                        id="weglot-language-fr"
+                        tabindex="-1"
+                      ></a>
+                    </li>
+                    <li data-l="de" role="none" id="wg-de" class="wg-li de">
+                      <a
+                        role="option"
+                        href="#"
+                        aria-label="DE"
+                        id="weglot-language-de"
+                        tabindex="-1"
+                      ></a>
+                    </li>
+                    <li data-l="pl" role="none" id="wg-pl" class="wg-li pl">
+                      <a
+                        role="option"
+                        href="#"
+                        aria-label="PL"
+                        id="weglot-language-pl"
+                        tabindex="-1"
+                      ></a>
+                    </li>
+                    <li data-l="pt" role="none" id="wg-pt" class="wg-li pt">
+                      <a
+                        role="option"
+                        href="#"
+                        aria-label="PT"
+                        id="weglot-language-pt"
+                        tabindex="-1"
+                      ></a>
+                    </li>
+                    <li data-l="es" role="none" id="wg-es" class="wg-li es">
+                      <a
+                        role="option"
+                        href="#"
+                        aria-label="ES"
+                        id="weglot-language-es"
+                        tabindex="-1"
+                      ></a>
+                    </li>
+                  </ul>
+                </aside>
+                <div
+                  class="weglot-container"
+                  data-switcher-id="1"
+                  id="weglot-switcher-1"
+                  data-switcher-style-opt='{"with_name":true,"full_name":true,"is_dropdown":true,"with_flags":true,"flag_type":"circle","custom_css":""}'
+                >
+                  <aside
+                    data-wg-notranslate="true"
+                    aria-label="Language selected: English"
+                    class="weglot_switcher wg-mouse-click country-selector default closed wg-drop"
+                  >
+                    <div
+                      data-l="en"
+                      role="combobox"
+                      aria-activedescendant=""
+                      aria-label="Language"
+                      tabindex="0"
+                      aria-expanded="false"
+                      aria-controls="weglot-listbox"
+                      class="wg-li en wgcurrent wg-flags"
+                    >
+                      <a
+                        target="_self"
+                        href="#"
+                        id="weglot-language-en"
+                        tabindex="-1"
+                        ><img
+                          src="https://cdn.weglot.com/flags/circle/us.svg"
+                          width="24"
+                          height="24"
+                          role="none"
+                          alt="English flag"
+                          class="wg-flag"
+                        />English</a
+                      >
+                    </div>
+                    <ul
+                      role="listbox"
+                      id="weglot-listbox"
+                      style="display: none"
+                    >
+                      <li
+                        data-l="fr"
+                        role="none"
+                        id="wg-fr"
+                        class="wg-li fr wg-flags"
+                      >
+                        <a
+                          role="option"
+                          href="#"
+                          id="weglot-language-fr"
+                          tabindex="-1"
+                          ><img
+                            src="https://cdn.weglot.com/flags/circle/fr.svg"
+                            width="24"
+                            height="24"
+                            role="none"
+                            alt="Français flag"
+                            class="wg-flag"
+                          />Français</a
+                        >
+                      </li>
+                      <li
+                        data-l="de"
+                        role="none"
+                        id="wg-de"
+                        class="wg-li de wg-flags"
+                      >
+                        <a
+                          role="option"
+                          href="#"
+                          id="weglot-language-de"
+                          tabindex="-1"
+                          ><img
+                            src="https://cdn.weglot.com/flags/circle/de.svg"
+                            width="24"
+                            height="24"
+                            role="none"
+                            alt="Deutsch flag"
+                            class="wg-flag"
+                          />Deutsch</a
+                        >
+                      </li>
+                      <li
+                        data-l="pl"
+                        role="none"
+                        id="wg-pl"
+                        class="wg-li pl wg-flags"
+                      >
+                        <a
+                          role="option"
+                          href="#"
+                          id="weglot-language-pl"
+                          tabindex="-1"
+                          ><img
+                            src="https://cdn.weglot.com/flags/circle/pl.svg"
+                            width="24"
+                            height="24"
+                            role="none"
+                            alt="Polski flag"
+                            class="wg-flag"
+                          />Polski</a
+                        >
+                      </li>
+                      <li
+                        data-l="pt"
+                        role="none"
+                        id="wg-pt"
+                        class="wg-li pt wg-flags"
+                      >
+                        <a
+                          role="option"
+                          href="#"
+                          id="weglot-language-pt"
+                          tabindex="-1"
+                          ><img
+                            src="https://cdn.weglot.com/flags/circle/pt.svg"
+                            width="24"
+                            height="24"
+                            role="none"
+                            alt="Português flag"
+                            class="wg-flag"
+                          />Português</a
+                        >
+                      </li>
+                      <li
+                        data-l="es"
+                        role="none"
+                        id="wg-es"
+                        class="wg-li es wg-flags"
+                      >
+                        <a
+                          role="option"
+                          href="#"
+                          id="weglot-language-es"
+                          tabindex="-1"
+                          ><img
+                            src="https://cdn.weglot.com/flags/circle/es.svg"
+                            width="24"
+                            height="24"
+                            role="none"
+                            alt="Español flag"
+                            class="wg-flag"
+                          />Español</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                </div>
+              </div>
+            </div>
+            <div class="nav__languages w-form">
+              <form
+                id="email-form"
+                name="email-form"
+                data-name="Email Form"
+                method="get"
+                data-wf-page-id="653bc2d77f31f69f95effead"
+                data-wf-element-id="86bd7610-43be-c850-074d-b6056c4ef403"
+                aria-label="Email Form"
+              >
+                <select
+                  id="Language"
+                  name="Language"
+                  data-name="Language"
+                  class="nav__languages hide w-select"
+                >
+                  <option value="">ENG</option>
+                  <option value="First">First choice</option>
+                  <option value="Second">Second choice</option>
+                  <option value="Third">Third choice</option>
+                </select>
+              </form>
+              <div
+                class="w-form-done"
+                tabindex="-1"
+                role="region"
+                aria-label="Email Form success"
+              >
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div
+                class="w-form-fail"
+                tabindex="-1"
+                role="region"
+                aria-label="Email Form failure"
+              >
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+            <div class="nav__button-wrapper">
+              <div
+                class="menu-btn w-nav-button"
+                style="-webkit-user-select: text"
+                aria-label="menu"
+                role="button"
+                tabindex="0"
+                aria-controls="w-nav-overlay-0"
+                aria-haspopup="menu"
+                aria-expanded="false"
+              ></div>
+              <div class="nav-button">
+                <div class="button--wrapper nav__button">
+                  <a href="#get-in-touch" class="button nav-button w-button"
+                    >Get in touch</a
+                  ><img
+                    src="https://assets-global.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f35a_Line%20Icons%20UI.svg"
+                    loading="eager"
+                    alt=""
+                    class="button__arrow"
+                  />
+                  <div class="button__bkg w-embed">
+                    <svg
+                      style="margin-bottom: -6px"
+                      width="100%"
+                      height="60"
+                      class="nav__button"
+                      version="1.1"
+                      preserveAspectRatio="xMidYMid meet"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                      <defs>
+                        <linearGradient
+                          x1="40%"
+                          y1="0%"
+                          x2="60%"
+                          y2="100%"
+                          id="linearGradient-0hgifvgurb-3"
+                        >
+                          <stop
+                            stop-color="rgba(255,255,255,.01)"
+                            offset="0%"
+                          ></stop>
+                          <stop
+                            stop-color="rgba(255,255,255,.4)"
+                            offset="100%"
+                          ></stop>
+                        </linearGradient>
+                      </defs>
+                      <g
+                        id="Page-1"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <g
+                          id="01-B-TDP-Cases-Option"
+                          transform="translate(-505.000000, -1252.000000)"
+                          stroke="url(#linearGradient-0hgifvgurb-3)"
+                        >
+                          <g
+                            id="Group-3"
+                            transform="translate(506.000000, 1253.000000)"
+                          >
+                            <rect
+                              id="Rectangle"
+                              x="0"
+                              y="0"
+                              width="99%"
+                              height="97%"
+                              rx="12"
+                            ></rect>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-nav-overlay"
+        data-wf-ignore=""
+        id="w-nav-overlay-0"
+        style="display: none"
+      ></div>
+    </div>
+  </body>
+</html>
