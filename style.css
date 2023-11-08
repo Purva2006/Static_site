@@ -1710,7 +1710,7 @@ svg path, svg ellipse, svg rect {
 }
 .sl-col {
   width: 32%;
-  border: 0.063vw solid var(--subTitleColor);
+  border: 0.063vw solid #394f14 !important;
   -webkit-border-radius: 2.188vw;
   -moz-border-radius: 2.188vw;
   border-radius: 2.188vw;
@@ -1764,13 +1764,13 @@ svg path, svg ellipse, svg rect {
   left: 0;
 }
 .sl-info-row {
-  border-top: 1px solid #c09759;
-  border-top: 0.063vw solid #c09759;
+  border-top: 1px solid #394f14;
+  border-top: 0.063vw solid #394f14;
   -webkit-border-radius: 0 0 2.188vw 2.188vw;
   -moz-border-radius: 0 0 2.188vw 2.188vw;
   border-radius: 0 0 2.188vw 2.188vw;
   width: 100%;
-  background: #101d2e;
+  background: #000000;
   padding: 1.75vw 1.25vw 1.875vw 3.125vw;
 }
 .sl-link {
@@ -1797,13 +1797,27 @@ svg path, svg ellipse, svg rect {
 .arrow-link {
   width: 4.063vw;
   height: 4.063vw;
-  border: 0.063vw solid #c09759;
+  border: 0.063vw solid #394f14;
+  
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
   -webkit-transition: all .4s ease;
   -moz-transition: all .4s ease;
   transition: all .4s ease;
+  box-shadow: 0 0 5px #8ece20 !important;
+}
+
+.shadow:hover{
+  box-shadow: 0.5px 0.5px 10px 0 #96d42f !important;
+}
+
+.arrow-link svg path{
+  fill: #74a91b  !important;
+}
+.arrow-link:hover{
+  border: 2px solid #394f14 !important;
+ background-color: #4f750d !important;
 }
 
 .fx-jc {
@@ -1820,16 +1834,7 @@ svg path, svg ellipse, svg rect {
 .sl-col:nth-child(3n), .sl-col:last-child {
   margin-right: 0;
 }
-.sl-col {
-  width: 32%;
-  border: 0.063vw solid #002b59;
-  -webkit-border-radius: 2.188vw;
-  -moz-border-radius: 2.188vw;
-  border-radius: 2.188vw;
-  margin-right: 2%;
-  margin-bottom: 3.063vw;
-  overflow: hidden;
-}
+
 .sl-graphic {
   width: 100%;
   position: relative;
