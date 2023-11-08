@@ -3194,7 +3194,7 @@ width: 100%;
 .shapeMover1{
   position: absolute;
    top:-226px;
-   left:-178px;
+   left:-234px;
    -webkit-animation-duration:9s;
     animation-duration: 9s;
     -webkit-animation-name:shapeMover1;
@@ -3208,5 +3208,5 @@ width: 100%;
   }
 } 
 .elementor-widget-container{
-  width: 100%;
+  width: 50%;
 }
