@@ -3279,8 +3279,8 @@ width: 100%;
 /* card css */
 .shapeMover1{
   position: absolute;
-   top:-226px;
-   left:-234px;
+  top: -266px;
+  left: -588px;
    -webkit-animation-duration:9s;
     animation-duration: 9s;
     -webkit-animation-name:shapeMover1;
@@ -3293,6 +3293,6 @@ width: 100%;
       transform: rotate(360deg);
   }
 } 
-.elementor-widget-container{
+.shapemover-container{
   width: 50%;
 }
