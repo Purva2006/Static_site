@@ -138,7 +138,7 @@ svg path, svg ellipse, svg rect {
     transition: fill .4s;
 }
  .solutions {
-    background: var(--darkBG);
+    background: #000000;
     padding-top: 2.5vw;
 }
         .sub-title-row {
@@ -215,13 +215,13 @@ svg path, svg ellipse, svg rect {
     left: 0;
 }
 .sl-info-row {
-    border-top: 1px solid #c09759;
-    border-top: 0.063vw solid #c09759;
+    border-top: 1px solid #394f14;
+    border-top: 0.063vw solid #394f14;
     -webkit-border-radius: 0 0 2.188vw 2.188vw;
     -moz-border-radius: 0 0 2.188vw 2.188vw;
     border-radius: 0 0 2.188vw 2.188vw;
     width: 100%;
-    background: #101d2e;
+    background: #000000;
     padding: 1.75vw 1.25vw 1.875vw 3.125vw;
 }
 .sl-link {
@@ -248,15 +248,30 @@ svg path, svg ellipse, svg rect {
 .arrow-link {
     width: 4.063vw;
     height: 4.063vw;
-    border: 0.063vw solid #c09759;
+    border: 0.063vw solid #394f14;
+    
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
     -webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
     transition: all .4s ease;
+    box-shadow: 0 0 5px #8ece20;
+}
+.shadow:hover{
+  box-shadow: 0.5px 0.5px 10px 0 #96d42f;
 }
 
+.arrow-link svg path{
+  fill: #74a91b  !important;
+}
+.arrow-link:hover{
+  border: 2px solid #394f14;
+ background-color: #4f750d;
+}
+.arrow-link svg path:hover{
+  fill: #ffffff  !important;
+}
 .fx-jc {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -273,7 +288,7 @@ svg path, svg ellipse, svg rect {
 }
 .sl-col {
     width: 32%;
-    border: 0.063vw solid #002b59;
+    border: 0.063vw solid #394f14;
     -webkit-border-radius: 2.188vw;
     -moz-border-radius: 2.188vw;
     border-radius: 2.188vw;

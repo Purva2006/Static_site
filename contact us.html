@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+ .contact-section {
+    height: auto;
+    min-height: 100vh;
+    background-color: black;
+    background-image: url(https://assets-global.website-files.com/6111234…/611128a…_Group%204540.svg);
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: auto;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.gradient {
+    z-index: 4;
+    width: 100%;
+    height: auto;
+    opacity: .08;
+    background-image: url(https://assets-global.website-files.com/6111234…/6114c1c…_backgr.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+.shad {
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,1,2,.69);
+    position: absolute;
+}
+.earth-video {
+    z-index: 1;
+    width: 700px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 10%;
+}
+.w-background-video {
+    height: 613px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    position: absolute;
+}
+.w-background-video>video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -100;
+    background-position: 50%;
+    background-size: cover;
+    margin: auto;
+    position: absolute;
+    top: -100%;
+    bottom: -100%;
+    left: -100%;
+    right: -100%;
+}
+audio, canvas, progress, video {
+    vertical-align: baseline;
+    display: inline-block;
+}
+.contact-us {
+    width: 100%;
+    height: auto;
+    max-width: 1500px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 86px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+}
+._72-heading.white.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+._72-heading.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+._72-heading.white {
+    color: white;
+    line-height: 102%;
+}
+._72-heading {
+    z-index: 5;
+    width: auto;
+    color: dark-slate-grey-3;
+    text-align: left;
+    letter-spacing: -.5px;
+    text-transform: uppercase;
+    flex: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    font-family: Formular,sans-serif;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 102%;
+    position: relative;
+    overflow: visible;
+}
+.option{
+    background-color: #000;
+    color: #fdfdfd;
+}
+
+.formwrapper--2.contact-us {
+    max-width: 1200px;
+}
+
+
+.formwrapper--2 {
+    z-index: 5;
+    width: 65%;
+    height: 486px;
+    background-color: transparent;
+    border: 1px rgba(0,1,2,.1);
+    border-radius: 8px 0 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 55px;
+    position: static;
+    top: auto;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+.form-block {
+    z-index: 20;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position: relative;
+}
+.w-form {
+    margin: 0 0 15px;
+}
+.form {
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-fields {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+.field {
+    width: 45%;
+    height: 50px;
+    color:  #fdfdfd;
+    text-transform: none;
+    background-color: transparent;
+    border: 1px #000;
+    border-bottom: 1px solid rgba(253,253,253,.16);
+    border-radius: 0;
+    margin-right: 20px;
+    padding-left: 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+.message.contacts {
+    width: 50%;
+}
+textarea.w-input, textarea.w-select {
+    height: auto;
+}
+.message {
+    width: 98%;
+    height: 50px;
+    min-height: 50px;
+    color: #fdfdfd;
+    text-transform: none;
+    background-color: transparent;
+    border: 1px #000;
+    border-bottom: 1px solid rgba(253,253,253,.16);
+    border-radius: 0;
+    align-self: center;
+    padding-top: 16px;
+    padding-bottom: 0;
+    padding-left: 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+.input_field.hear {
+    width: 50%;
+    background-image: url(https://assets-global.website-files.com/6111234…/64d20a0…_%2B.svg);
+    background-position: 98%;
+    background-repeat: no-repeat;
+    background-size: 9px;
+    border-radius: 0;
+}
+.input_field {
+    -webkit-appearance: none!important;
+}
+.input_field {
+    width: 45%;
+    height: 50px;
+    color: white;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px #000;
+    border-bottom: 1px solid rgba(253,253,253,.16);
+    padding-left: 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+.text-field-3 {
+    width: 45%;
+    height: 50px;
+    color:  #fdfdfd;
+    text-transform: none;
+    background-color: transparent;
+    border: 1px #000;
+    border-bottom: 1px solid rgba(253,253,253,.16);
+    border-radius: 0;
+    margin-right: 20px;
+    padding-left: 0;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+.input_field.hear {
+    width: 50%;
+    background-image: url(https://assets-global.website-files.com/6111234…/64d20a0…_%2B.svg);
+    background-position: 98%;
+    background-repeat: no-repeat;
+    background-size: 9px;
+    border-radius: 0;
+}
+.input_field {
+    -webkit-appearance: none!important;
+}
+.input_field {
+    width: 45%;
+    height: 50px;
+    color:  #fdfdfd;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px #000;
+    border-bottom: 1px solid rgba(253,253,253,.16);
+    padding-left: 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+.telwrapper._50 {
+    width: 50%;
+    margin-right: 10px;
+}
+.telwrapper {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 10px;
+    display: flex;
+}
+.check-button {
+    width: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+}
+.checkbox-field {
+    width: 240px;
+    padding-left: 0;
+}
+.checkbox {
+    border: 1px solid  #fdfdfd;
+    background-color: transparent;
+    border-radius: 4px;
+    display: block;
+}
+label {
+    margin-bottom: 5px;
+    font-weight: 700;
+    display: block;
+}
+.w-checkbox-input--inputType-custom {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+.w-checkbox-input {
+    float: left;
+    margin: 4px 0 0 -20px;
+    line-height: normal;
+}
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+input {
+    line-height: normal;
+}
+.checkbox-label {
+    color:  #fdfdfd;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 130%;
+}
+.text-span-119 {
+    color:#8aeab9;
+}
+.transparent-button.no-margin {
+    width: 160px;
+    justify-content: center;
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+input.w-button {
+    -webkit-appearance: button;
+}
+.transparent-button {
+    z-index: 5;
+    width: auto;
+    height: 45px;
+    border: 1px solid  #fdfdfd !important;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    border-radius: 8px;
+    align-items: center;
+    margin-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 12px;
+    line-height: 24px;
+    transition: background-color .4s;
+    display: flex;
+    position: relative;
+    top: auto;
+}
+.w-button {
+    color: #fff;
+    /* line-height: inherit; */
+    cursor: pointer;
+    /* background-color: #3898ec; */
+    border: 0;
+    border-radius: 0;
+    padding: 9px 15px;
+    text-decoration: none;
+    /* display: inline-block; */
+}
+
+.field:hover, .field:active {
+    background-color: transparent;
+}
+.field:focus {
+    border-bottom-color: #8aeab9;
+    background-color: transparent;
+}
+.w-input:focus, .w-select:focus {
+    border-color:#8aeab9;
+    outline: 0;
+}
+.greenspan{
+    color: #8aeab9;
+    font-weight: 500;
+    /* line-height: 102%; */
+    font-size: 87px;
+}
+a {
+    color:#8aeab9;
+    border-left-style: none;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.field::placeholder,
+.text-field-3::placeholder,
+.message::placeholder {
+    color:#fff;
+}
+
+
+@media screen and (max-width: 768px) {
+    ._72-heading {
+        font-size: 40px;
+    }
+    .greenspan{     font-size: 46px;}
+    ._72-heading.white {
+        line-height: 0%;
+    }
+    .formwrapper--2 {
+    height: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.field {
+    width: 100%;
+    border-style: none none solid;
+    border-color: white white  rgba(253,253,253,.16);
+}
+.input_field.hear {
+    width: 99%;
+}
+.formwrapper--2 .contact-us {
+    height: 400px;
+    margin-bottom: 100px;
+   
+}
+.form-fields {
+   margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+.formwrapper--2 {
+    padding: 0  ;
+    width: auto;
+}
+.text-field-3,.message.contacts{
+    width: 100%;
+}
+.w-background-video {
+    height: 575px;
+    width: 600px;
+}   
+.text-field-3,.field{
+    margin-right: 0px;
+}
+}
+    </style>
+</head>
+
+<body>
+    <div class="contact-section">
+        <div class="gradient"></div>
+        <div class="shad"></div>
+        <div data-poster-url="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-poster-00001.jpg"
+            data-video-urls="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.mp4,https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.webm"
+            data-autoplay="true" data-loop="true" data-wf-ignore="true" data-beta-bgvideo-upgrade="false"
+            class="earth-video w-background-video w-background-video-atom"><video
+                id="3e30a863-d369-ad3c-6ba9-50a9f76e94b3-video" autoplay="" loop=""
+                style="background-image:url(&quot;https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-poster-00001.jpg&quot;)"
+                muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                <source
+                    src="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.mp4"
+                    data-wf-ignore="true">
+                <source
+                    src="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.webm"
+                    data-wf-ignore="true">
+            </video></div>
+        <div class="contact-us">
+            <h1 class="_72-heading white centered"
+                style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                Contact <span class="greenspan">us</span></h1>
+        </div>
+        <div class="formwrapper--2 contact-us">
+            <div class="form-block w-form">
+                <form id="wf-form-Email-Form-Contact-Us" name="wf-form-Email-Form-Contact-Us"
+                    data-name="Email Form Contact Us" method="get" class="form"
+                    data-wf-page-id="6141b0ec541d3093260888d6" data-wf-element-id="671ad637-ece5-33e0-b85d-3a770b92d542"
+                    aria-label="Email Form Contact Us">
+                    <div class="form-fields"><input type="text" class="field w-input" maxlength="256" name="Name"
+                            data-name="Name" placeholder="your Name" id="Name-3" required=""><select
+                            id="Select-a-question" name="Select-a-question" data-name="Select a question" required=""
+                            class="input_field hear w-select">
+                            <option value="" class="option">Select a question</option>
+                            <option value="B2B REQUEST" class="option">B2B REQUEST</option>
+                            <option value="PAYMENTS" class="option">PAYMENTS</option>
+                            <option value="SOFTWARE" class="option">SOFTWARE</option>
+                            <option value="CAREER" class="option">CAREER</option>
+                            <option value="PR OR MARKETING QUERIES" class="option">PR OR MARKETING QUERIES</option>
+                            <option value="OTHER QUESTIONS" class="option">OTHER QUESTIONS</option>
+                        </select><input type="email" class="text-field-3 w-input" maxlength="256" name="Email"
+                            data-name="Email" placeholder="Email" id="Email-4" required=""><select
+                            id="how-did-you-hear-about-us" name="how-did-you-hear-about-us"
+                            data-name="how did you hear about us?" required="" class="input_field hear w-select">
+                            <option value="" class="option">how did you hear about us?</option>
+                            <option value="Google" class="option">Google</option>
+                            <option value="LinkedIn" class="option">LinkedIn</option>
+                            <option value="Media" class="option">Media</option>
+                            <option value="Events" class="option">Events</option>
+                            <option value="A Friend" class="option">A Friend</option>
+                            <option value="Other" class="option">Other</option>
+                        </select>
+                        <div class="telwrapper _50">
+                            <div class="w-embed"><input type="hidden" name="Dial code" id="dialCode" class="dialCode"
+                                    value="+91"></div>
+                            <!-- <div class="w-embed"><span id="valid-msg" class="hide">Valid number</span>
+                                <span id="error-msg" class="hide"></span>
+                            </div> -->
+                        </div><textarea id="Message" name="Message" maxlength="5000" data-name="Message"
+                            placeholder="Message" class="message contacts w-input"></textarea>
+                    </div>
+                    <div class="check-button"><input type="submit" value="Send" data-wait="Please wait..."
+                            class="transparent-button no-margin w-button"></div>
+                </form>
+               
+            </div>
+        </div>
+        <div class="contact-bottom">
+            <div class="contact-wrapper socials-contact">
+                <div class="menu-socials"><a href="https://www.linkedin.com/company/soft2bet"
+                        class="socials-link big w-inline-block"></a><a href="https://www.instagram.com/soft2bet_group/"
+                        class="socials-link insta big w-inline-block"></a><a
+                        href="https://www.facebook.com/Soft2Bet-104799147813683/"
+                        class="socials-link fb big w-inline-block"></a><a
+                        href="https://www.youtube.com/channel/UCHFtbkvyyfRDjONsW1exoEw"
+                        class="socials-link youtube big last w-inline-block"></a></div>
+            </div>
+           
+        </div>
+    </div>
+
+
+
+
+
+ 
+</body>
+
+</html>
