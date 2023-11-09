@@ -55,7 +55,7 @@ html {
 .fx {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
 }
 .fx-ac {
     -webkit-box-align: center;
@@ -150,7 +150,7 @@ svg path, svg ellipse, svg rect {
 .fx {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
 }
 .sd-pad {
     padding: 0 6.563vw;
@@ -172,7 +172,7 @@ svg path, svg ellipse, svg rect {
 .sl-graphic {
     width: 100%;
     position: relative;
-    height: 22.75vw;
+    height: 23.75vw;
     text-align: center;
     overflow: hidden;
 }
@@ -222,7 +222,7 @@ svg path, svg ellipse, svg rect {
     border-radius: 0 0 2.188vw 2.188vw;
     width: 100%;
     background: #000000;
-    padding: 1.75vw 1.25vw 1.875vw 3.125vw;
+    padding: 0.5vw 1.25vw 0.5vw 1.125vw;
 }
 .sl-link {
     display: block;
@@ -246,8 +246,8 @@ svg path, svg ellipse, svg rect {
     justify-content: flex-end;
 }
 .arrow-link {
-    width: 4.063vw;
-    height: 4.063vw;
+    width: 2.063vw;
+    height: 2.063vw;
     border: 0.063vw solid #394f14;
     
     -webkit-border-radius: 50%;
@@ -258,8 +258,15 @@ svg path, svg ellipse, svg rect {
     transition: all .4s ease;
     box-shadow: 0 0 5px #8ece20;
 }
+.st-row {
+  float: right;
+}
+.shadow{
+  transition: .2s;
+}
 .shadow:hover{
   box-shadow: 0.5px 0.5px 10px 0 #96d42f;
+  transform: translateY(-10px);
 }
 
 .arrow-link svg path{
@@ -283,11 +290,11 @@ svg path, svg ellipse, svg rect {
     -ms-grid-row-align: center;
     align-items: center;
 }
-.sl-col:nth-child(3n), .sl-col:last-child {
+.sl-col:nth-child(5n), .sl-col:last-child {
     margin-right: 0;
 }
 .sl-col {
-    width: 32%;
+    width: 18%;
     border: 0.063vw solid #394f14;
     -webkit-border-radius: 2.188vw;
     -moz-border-radius: 2.188vw;
@@ -296,13 +303,7 @@ svg path, svg ellipse, svg rect {
     margin-bottom: 3.063vw;
     overflow: hidden;
 }
-.sl-graphic {
-    width: 100%;
-    position: relative;
-    height: 22.75vw;
-    text-align: center;
-    overflow: hidden;
-}.sl-link {
+.sl-link {
     display: block;
     height: 100%;
     text-decoration: none;
@@ -314,11 +315,11 @@ svg path, svg ellipse, svg rect {
     margin: 0;
     color: white;
     font-family: 'ibm_plex_sansregular';
-    font-size: 2.063vw;
+    font-size: 1.5vw;
     text-transform: uppercase;
     line-height: 2.500vw;
     width: 80%;
-    min-height: 5vw;
+    min-height: 0vw;
 }
 .st-row {
     margin-top: -0.688vw;
@@ -448,7 +449,7 @@ svg path, svg ellipse, svg rect {
 .fx {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
 }
 .graphic {
     height: 36vw;
@@ -2896,7 +2897,7 @@ html {
   
   .container {
     height: 100%;
-    max-width: 80rem;
+    /* max-width: 80rem; */
     flex-flow: column;
     justify-content: flex-start;
     align-items: baseline;

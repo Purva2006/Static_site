@@ -470,8 +470,8 @@
   
   .color--white {
     color: white;
-    font-size: 38px;
-    margin-bottom: 20px;
+    font-size: 40px;
+    margin-bottom: 40px;
   }
   
   .color--white.text-align--center {
@@ -659,6 +659,9 @@
   }
   .feature-wrapper{
     margin-bottom: 20px;
+  }
+  .section--charcoal{
+padding-bottom: 50px;
   }
   @media screen and (max-width: 768px) {
     .content-grid {
