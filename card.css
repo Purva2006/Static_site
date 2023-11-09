@@ -157,8 +157,8 @@ svg path, svg ellipse, svg rect {
     left: 0;
 }
 .sl-info-row {
-    border-top: 1px solid #394f14;
-    border-top: 0.063vw solid #394f14;
+    border-top: 1px solid #23e4c0;
+    border-top: 0.063vw solid #23e4c0;
     -webkit-border-radius: 0 0 2.188vw 2.188vw;
     -moz-border-radius: 0 0 2.188vw 2.188vw;
     border-radius: 0 0 2.188vw 2.188vw;
@@ -190,7 +190,7 @@ svg path, svg ellipse, svg rect {
 .arrow-link {
     width: 2.063vw;
     height: 2.063vw;
-    border: 0.063vw solid #394f14;
+    border: 0.063vw solid #23e4c0;
     
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -207,19 +207,19 @@ svg path, svg ellipse, svg rect {
   transition: .2s;
 }
 .shadow:hover{
-  box-shadow: 0.5px 0.5px 10px 0 #96d42f;
-  transform: translateY(-10px);
+  box-shadow: 3px 3px 10px 0 #23e4c0;
+  transform: translateY(-30px);
 }
 
 .arrow-link svg path{
-  fill: #74a91b  !important;
+  fill: #ffffff  !important;
 }
 .arrow-link:hover{
-  border: 2px solid #394f14;
- background-color: #4f750d;
+  border: 2px solid #0f302a;
+ background-color: #0f302a;
 }
 .arrow-link svg path:hover{
-  fill: #ffffff  !important;
+  fill: #0f302a  !important;
 }
 .fx-jc {
     -webkit-box-pack: center;
@@ -237,7 +237,7 @@ svg path, svg ellipse, svg rect {
 }
 .sl-col {
     width: 18%;
-    border: 0.063vw solid #394f14;
+    border: 0.063vw solid #23e4c0;
     -webkit-border-radius: 2.188vw;
     -moz-border-radius: 2.188vw;
     border-radius: 2.188vw;
