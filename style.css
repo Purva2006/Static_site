@@ -207,10 +207,6 @@ blockquote {
   position: relative;
 }
 
-.section.section--charcoal {
-  background-color: var(--charcoal);
-  background-image: none;
-}
 
 .section.section--charcoal.position--relative {
   position: relative;
@@ -1702,7 +1698,7 @@ svg path, svg ellipse, svg rect {
   transition: fill .4s;
 }
 .solutions {
-  background: #1e212b !important;
+  background: #edfbf5 !important;
   padding-top: 2.5vw;
 }
       .sub-title-row {
@@ -4108,7 +4104,7 @@ blockquote {
 }
 
 .section.section--charcoal {
-  background-color: var(--charcoal);
+  background-color: white;
   background-image: none;
 }
 
@@ -4445,7 +4441,7 @@ blockquote {
 
 
 .color--white {
-  color: white;
+  color: black;
   font-size: 40px;
   margin-bottom: 40px;
 }
@@ -4622,8 +4618,15 @@ blockquote {
 }
 
 .feature-text {
-  color: var(--light-grey);
+  color: black;
   line-height: 150%;
+}
+
+.sol1{
+  font-weight: bolder;
+    font-size: 55px;
+    text-align: center;
+    margin-left: 468px;
 }
 
 .mini-video-wrapper {
@@ -5470,8 +5473,10 @@ input#checkboxLabel:checked~.box span {
 
 .df {
   --tw-border-opacity: 1;
-  border-color: rgb(62 125 255/var(--tw-border-opacity))
+  border-color: #4cbd89;
 }
+
+
 
 .ef {
   --tw-border-opacity: 1;
@@ -6927,3 +6932,8 @@ input#checkboxLabel:checked~.box span {
   }
 }
 
+.sh-card{
+  padding-top: 20px;
+    padding-bottom: 66px;
+    background-color: #edfbf5 !important;
+}
