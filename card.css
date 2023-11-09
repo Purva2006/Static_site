@@ -55,7 +55,7 @@ html {
 .fx {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
 }
 .fx-ac {
     -webkit-box-align: center;
@@ -150,7 +150,7 @@ svg path, svg ellipse, svg rect {
 .fx {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
 }
 .sd-pad {
     padding: 0 6.563vw;
@@ -172,7 +172,7 @@ svg path, svg ellipse, svg rect {
 .sl-graphic {
     width: 100%;
     position: relative;
-    height: 15.75vw;
+    height: 23.75vw;
     text-align: center;
     overflow: hidden;
 }
@@ -246,8 +246,8 @@ svg path, svg ellipse, svg rect {
     justify-content: flex-end;
 }
 .arrow-link {
-    width: 4.063vw;
-    height: 4.063vw;
+    width: 2.063vw;
+    height: 2.063vw;
     border: 0.063vw solid #394f14;
     
     -webkit-border-radius: 50%;
@@ -257,6 +257,9 @@ svg path, svg ellipse, svg rect {
     -moz-transition: all .4s ease;
     transition: all .4s ease;
     box-shadow: 0 0 5px #8ece20;
+}
+.st-row {
+  float: right;
 }
 .shadow{
   transition: .2s;
@@ -287,11 +290,11 @@ svg path, svg ellipse, svg rect {
     -ms-grid-row-align: center;
     align-items: center;
 }
-.sl-col:nth-child(4n), .sl-col:last-child {
+.sl-col:nth-child(5n), .sl-col:last-child {
     margin-right: 0;
 }
 .sl-col {
-    width: 23%;
+    width: 18%;
     border: 0.063vw solid #394f14;
     -webkit-border-radius: 2.188vw;
     -moz-border-radius: 2.188vw;
@@ -300,13 +303,7 @@ svg path, svg ellipse, svg rect {
     margin-bottom: 3.063vw;
     overflow: hidden;
 }
-.sl-graphic {
-    width: 100%;
-    position: relative;
-    height: 15.75vw;
-    text-align: center;
-    overflow: hidden;
-}.sl-link {
+.sl-link {
     display: block;
     height: 100%;
     text-decoration: none;
@@ -452,7 +449,7 @@ svg path, svg ellipse, svg rect {
 .fx {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
 }
 .graphic {
     height: 36vw;
