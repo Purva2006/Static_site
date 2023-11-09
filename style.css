@@ -1,7 +1,7 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: sans-serif;
+  font-family: Poppins, sans-serif !important;
 }
 
 body {
@@ -42,7 +42,7 @@ body {
   color: #333;
   background-color: #fff;
   margin: 0;
-  font-family: Poppins!important;
+  font-family: Poppins, sans-serif !important;
   font-size: 14px;
   line-height: 20px;
 }
@@ -114,7 +114,7 @@ body {
 }
 body {
   color: var(--charcoal);
-  font-family: Ppneuemontreal, sans-serif;
+  font-family:Poppins !important;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
@@ -122,7 +122,7 @@ body {
 
 h1 {
   color: var(--tech-green);
-  font-family: Marsstandard, sans-serif;
+  font-family: Poppins, sans-serif !important;
   font-size: 4.5em;
   font-weight: 400;
   line-height: 96%;
@@ -131,7 +131,7 @@ h1 {
 h2 {
   margin-top: 20px;
   margin-bottom: 10px;
-  font-family: Marsstandard, sans-serif;
+  font-family: Poppins, sans-serif !important;
   font-size: 4em;
   font-weight: 400;
   line-height: 115%;
@@ -141,7 +141,7 @@ h3 {
   letter-spacing: -.01em;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Marsstandard, sans-serif;
+  font-family: Poppins, sans-serif !important;
   font-size: 3em;
   font-weight: 400;
   line-height: 120%;
@@ -151,7 +151,7 @@ h4 {
   letter-spacing: -.01em;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Marsstandard, sans-serif;
+  font-family: Poppins, sans-serif !important;
   font-size: 2.5em;
   font-weight: 400;
   line-height: 120%;
@@ -161,7 +161,7 @@ h5 {
   letter-spacing: -.01em;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Marsstandard, sans-serif;
+  font-family: Poppins, sans-serif !important;
   font-size: 2em;
   font-weight: 400;
   line-height: 1.2;
@@ -171,7 +171,7 @@ h6 {
   letter-spacing: -.01em;
   margin-top: 10px;
   margin-bottom: 1rem;
-  font-family: Marsstandard, sans-serif;
+  font-family: Poppins, sans-serif !important;
   font-size: 1.375em;
   font-weight: 400;
   line-height: 130%;
@@ -182,7 +182,7 @@ p {
 }
 
 a {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 ul {
@@ -1261,7 +1261,7 @@ align-items: center;
 justify-content: center;
 gap: 0.25rem;
 border-radius: 5px;
-padding: 10px 15px;
+/* padding: 10px 15px; */
 font-size: 16px;
 font-weight: 600;
 text-transform: uppercase;
@@ -1529,7 +1529,7 @@ line-height: 19px;
     }
   }
   
-  @font-face {
+  /* @font-face {
     font-family: 'Ppneuemontreal';
     src: url('https://assets.website-files.com/6514bebbe03b09dad031f32e/6514bebbe03b09dad031f350_ppneuemontreal-bold.otf') format('opentype');
     font-weight: 700;
@@ -1570,7 +1570,7 @@ line-height: 19px;
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-  }
+  } */
 
   :is(.intro-heading-wrapper, .intro-content-wrapper).start {
     opacity: 1;
@@ -1770,7 +1770,7 @@ svg path, svg ellipse, svg rect {
 .sl-info-row h4 {
   margin: 0;
   color: white;
-  font-family: 'ibm_plex_sansregular';
+  font-family: Poppins, sans-serif !important;
   font-size: 2.063vw;
   text-transform: uppercase;
   line-height: 2.500vw;
@@ -1841,7 +1841,7 @@ svg path, svg ellipse, svg rect {
 .sl-info-row h4 {
   margin: 0;
   color: white;
-  font-family: 'ibm_plex_sansregular';
+  font-family: Poppins, sans-serif !important;
   font-size: 2.063vw;
   text-transform: uppercase;
   line-height: 2.500vw;
@@ -2146,13 +2146,13 @@ input, textarea {
 .sl-title-row h4 {
   margin: 0;
   color: #9eff00;;
-  font-family: 'ibm_plex_sanslight';
+  font-family: Poppins, sans-serif !important;
   font-size: 0.750vw;
   text-transform: uppercase;
   line-height: 1.125vw;
 }
 strong, b {
-  font-family: 'ibm_plex_sansbold';
+  font-family: Poppins, sans-serif !important;
 }
 .sl-desc-row, .sl-hd-desc-row, .sl-hd-bf-list {
   display: none;
@@ -2195,7 +2195,7 @@ strong, b {
   text-transform: uppercase;
   color: var(--golden2);
   font-size: var(--size14_vw);
-  font-family: 'ibm_plex_sansregular';
+  font-family: Poppins, sans-serif !important;
   -webkit-transition: color .3s;
   -moz-transition: color .3s;
   transition: color .3s;
@@ -2311,6 +2311,9 @@ margin: auto;
 
 nav{
   background-color: black;
+  position: fixed;
+  z-index: 99999999;
+  width: 100%;
   
 }
 
@@ -2556,7 +2559,7 @@ flex: none;
 margin-top: 0;
 margin-bottom: 0;
 margin-right: 0;
-font-family: Formular,sans-serif;
+font-family: Poppins !important;
 font-size: 72px;
 font-weight: 500;
 line-height: 102%;
@@ -2850,7 +2853,7 @@ a {
 color:#8aeab9;
 border-left-style: none;
 font-weight: 500;
-text-decoration: underline;
+/* text-decoration: underline; */
 }
 .field::placeholder,
 .text-field-3::placeholder,

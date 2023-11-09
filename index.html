@@ -1,1918 +1,1991 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>VRNL Static Site</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<head>
+  <meta charset="utf-8" />
+  <title>VRNL Static Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+  <script>
+    translationData = {
+      English: {
+        1: " Get Your White Label With The Biggest Exchange",
+        2: "Celebrate Success with Our Leading White Label Exchange Solution",
+        3: "Discover the Future of Betting with Our White Label Website Solutions",
+      }
+
+    };
+
+    // Function to get language from localStorage or browser's settings
+    const getPreferredLanguage = () => {
+      const localStorageLang = localStorage.getItem("wglang");
+      if (localStorageLang) {
+        return localStorageLang;
+      }
+      //return navigator.language || navigator.userLanguage;
+      return "en";
+    };
+
+    // Function to update the text of elements with class 'heading--intro'
+    const updateText = () => {
+      const language = getPreferredLanguage();
+      const languageMapping = {
+        en: "English",
+        fr: "Français",
+        de: "Deutsch",
+        pl: "Polski",
+        pt: "Português",
+        es: "Español",
+      };
+      const mappedLanguage = languageMapping[language.slice(0, 2)];
+
+      if (mappedLanguage && translationData[mappedLanguage]) {
+        const elements = document.querySelectorAll(".heading--intro");
+        elements.forEach((element, index) => {
+          const identifier = index + 1;
+          if (translationData[mappedLanguage][identifier]) {
+            element.textContent = translationData[mappedLanguage][identifier];
+          }
+        });
+      }
+    };
+  </script>
+
+
+  <style>
+    html.lenis {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    /* Heading Intro */
+    .words.splitting .word {
+      text-wrap: nowrap;
+    }
+
+    /* LANGUAGE SWITCHER */
+
+    .weglot_switcher.wg-list.wg-mouse-click.country-selector.closed {
+      display: none;
+    }
+
+    .weglot_switcher {
+      background-color: transparent !important;
+      font-family: Marsstandard, sans-serif;
+    }
+
+    .wg-default,
+    .wg-default .country-selector {
+      position: relative !important;
+    }
+
+    body>.wg-default {
+      display: none;
+    }
+
+    .country-selector a {
+      color: white !important;
+    }
+
+    .wg-drop.country-selector .wgcurrent:after {
+      filter: invert(1) !important;
+    }
+
+    .wg-drop.country-selector.closed .wgcurrent:after {
+      transform: none !important;
+    }
+
+    .wg-li {
+      border: none !important;
+    }
+
+    .wg-drop.country-selector ul {
+      border: none !important;
+    }
+
+    .wg-drop.country-selector ul {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border-radius: 0.75rem !important;
+      backdrop-filter: brightness(0.5) blur(5px);
+    }
+
+    /* END LANGUAGE SWITCHER */
+
+    html.w-editor .w-editor-edit-fade-in .intro-heading-wrapper {
+      display: flex;
+    }
+
+    html.lenis {
+      height: auto;
+    }
+
+    :root {
+      --animation-easing: ease;
+    }
+
+    @media (min-width: 992px) {
+      .nav.close {
+        transform: translate3d(0, -100%, 0);
+      }
+    }
+
+    .animated:is(h1, h2, h3, p):not(.start) {
+      visibility: hidden;
+    }
+
+    .words.splitting .word {
+      position: relative;
+      overflow: clip;
+      display: inline-block;
+      height: 1.1em;
+    }
+
+    .words.splitting .char {
+      display: inline-block;
+      opacity: 0;
+      transition: opacity 0.4s linear, transform 0.4s var(--animation-easing);
+      transform: translate3d(0, 1em, 0);
+      transition-delay: calc(var(--word-index) * 0.1s);
+    }
+
+    .words.splitting.start .char {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition: opacity 0.8s linear, transform 0.8s var(--animation-easing);
+      transition-delay: calc(var(--word-index) * 0.15s);
+    }
+
+    .company-item,
+    .cpb__item {
+      transition: opacity 0.4s linear, transform 0.4s var(--animation-easing);
+      transition-delay: calc(var(--index) * 0.15s);
+    }
+
+    .company-item.animated:not(.start) {
+      opacity: 0;
+      transform: translate3d(0, 2em, 0);
+    }
+
+    .cpb__item.animated:not(.start) {
+      opacity: 0;
+      transform: translate3d(-2em, 0, 0);
+    }
+  </style>
+
+
+  <style>
+    .content-grids {
+      flex-direction: row;
+    }
+
+    .horizontal-sticky {
+      max-height: 100vh;
+    }
+
+    @media (orientation: landscape) and (min-width: 768px) {
+      .horizontal-sticky .content-grids {
+        margin-left: calc((100vw - 78em) / -2);
+        width: 100vw;
+        position: absolute;
+        bottom: 12.5vh;
+      }
+    }
+
+    .horizontal-sticky .content-grid {
+      max-width: 84em;
+    }
+
+    .intro-heading-wrapper {
+      display: grid;
+    }
+
+    /* Intro Anim */
+    :is(.intro-heading-wrapper, .intro-content-wrapper):not(.start) {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    :is(.intro-heading-wrapper, .intro-content-wrapper).start {
+      opacity: 1;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .bg-video {
+      filter: brightness(0%);
+      transition: filter 0.6s ease-out;
+    }
+
+    .bg-video.start {
+      filter: brightness(100%);
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+<!-- navbar -->
+  <nav>
+
+    <ul class="sidebar">
+      <li onclick="hideshow()"><a><i class="fa-solid fa-xmark fa-fade"></i></a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#our work">our work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">partners</a></li>
+      <li><a href="#">services</a></li>
+      <li><a href="#">contact</a></li>
+
+    </ul>
     
 
-    <script>
-      translationData = {
-        English: {
-          1: " Get Your White Label With The Biggest Exchange",
-          2: "Celebrate Success with Our Leading White Label Exchange Solution",
-          3: "Discover the Future of Betting with Our White Label Website Solutions",
-        }
-      
-      };
+    <ul>
+      <li class="img_header"><img src="assest/logo.webp" width="137" height="55"></li>
+      <li class="hidemobile"><a href="#home">Home</a></li>
+      <li class="hidemobile"><a href="#our work">our work</a></li>
+      <li class="hidemobile"><a href="#about">About</a></li>
+      <li class="hidemobile"><a href="#">partners</a></li>
+      <li class="hidemobile"><a href="#">services</a></li>
+      <li class="hidemobile"><a href="#">contact</a></li>
+      <li class="menu_bar" onclick="showsidebar()"><a><i class="fa-solid fa-bars fa-fade"></i></a></li>
 
-      // Function to get language from localStorage or browser's settings
-      const getPreferredLanguage = () => {
-        const localStorageLang = localStorage.getItem("wglang");
-        if (localStorageLang) {
-          return localStorageLang;
-        }
-        //return navigator.language || navigator.userLanguage;
-        return "en";
-      };
-
-      // Function to update the text of elements with class 'heading--intro'
-      const updateText = () => {
-        const language = getPreferredLanguage();
-        const languageMapping = {
-          en: "English",
-          fr: "Français",
-          de: "Deutsch",
-          pl: "Polski",
-          pt: "Português",
-          es: "Español",
-        };
-        const mappedLanguage = languageMapping[language.slice(0, 2)];
-
-        if (mappedLanguage && translationData[mappedLanguage]) {
-          const elements = document.querySelectorAll(".heading--intro");
-          elements.forEach((element, index) => {
-            const identifier = index + 1;
-            if (translationData[mappedLanguage][identifier]) {
-              element.textContent = translationData[mappedLanguage][identifier];
-            }
-          });
-        }
-      };
-    </script>
-    
-
-    <style>
-      html.lenis {
-        height: auto;
-      }
-
-      .lenis.lenis-smooth {
-        scroll-behavior: auto;
-      }
-
-      .lenis.lenis-smooth [data-lenis-prevent] {
-        overscroll-behavior: contain;
-      }
-
-      .lenis.lenis-stopped {
-        overflow: hidden;
-      }
-
-      /* Heading Intro */
-      .words.splitting .word {
-        text-wrap: nowrap;
-      }
-
-      /* LANGUAGE SWITCHER */
-
-      .weglot_switcher.wg-list.wg-mouse-click.country-selector.closed {
-        display: none;
-      }
-
-      .weglot_switcher {
-        background-color: transparent !important;
-        font-family: Marsstandard, sans-serif;
-      }
-      .wg-default,
-      .wg-default .country-selector {
-        position: relative !important;
-      }
-      body > .wg-default {
-        display: none;
-      }
-      .country-selector a {
-        color: white !important;
-      }
-
-      .wg-drop.country-selector .wgcurrent:after {
-        filter: invert(1) !important;
-      }
-
-      .wg-drop.country-selector.closed .wgcurrent:after {
-        transform: none !important;
-      }
-
-      .wg-li {
-        border: none !important;
-      }
-
-      .wg-drop.country-selector ul {
-        border: none !important;
-      }
-
-      .wg-drop.country-selector ul {
-        background: rgba(255, 255, 255, 0.05) !important;
-        border-radius: 0.75rem !important;
-        backdrop-filter: brightness(0.5) blur(5px);
-      }
-
-      /* END LANGUAGE SWITCHER */
-
-      html.w-editor .w-editor-edit-fade-in .intro-heading-wrapper {
-        display: flex;
-      }
-
-      html.lenis {
-        height: auto;
-      }
-
-      :root {
-        --animation-easing: ease;
-      }
-
-      @media (min-width: 992px) {
-        .nav.close {
-          transform: translate3d(0, -100%, 0);
-        }
-      }
-
-      .animated:is(h1, h2, h3, p):not(.start) {
-        visibility: hidden;
-      }
-
-      .words.splitting .word {
-        position: relative;
-        overflow: clip;
-        display: inline-block;
-        height: 1.1em;
-      }
-
-      .words.splitting .char {
-        display: inline-block;
-        opacity: 0;
-        transition: opacity 0.4s linear, transform 0.4s var(--animation-easing);
-        transform: translate3d(0, 1em, 0);
-        transition-delay: calc(var(--word-index) * 0.1s);
-      }
-
-      .words.splitting.start .char {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-        transition: opacity 0.8s linear, transform 0.8s var(--animation-easing);
-        transition-delay: calc(var(--word-index) * 0.15s);
-      }
-
-      .company-item,
-      .cpb__item {
-        transition: opacity 0.4s linear, transform 0.4s var(--animation-easing);
-        transition-delay: calc(var(--index) * 0.15s);
-      }
-
-      .company-item.animated:not(.start) {
-        opacity: 0;
-        transform: translate3d(0, 2em, 0);
-      }
-
-      .cpb__item.animated:not(.start) {
-        opacity: 0;
-        transform: translate3d(-2em, 0, 0);
-      }
-    </style>
-
-    
-    <style>
-      .content-grids {
-        flex-direction: row;
-      }
-      .horizontal-sticky {
-        max-height: 100vh;
-      }
-      @media (orientation: landscape) and (min-width: 768px) {
-        .horizontal-sticky .content-grids {
-          margin-left: calc((100vw - 78em) / -2);
-          width: 100vw;
-          position: absolute;
-          bottom: 12.5vh;
-        }
-      }
-      .horizontal-sticky .content-grid {
-        max-width: 84em;
-      }
-      .intro-heading-wrapper {
-        display: grid;
-      }
-
-      /* Intro Anim */
-      :is(.intro-heading-wrapper, .intro-content-wrapper):not(.start) {
-        opacity: 0;
-        transition: opacity 0.3s ease-out;
-      }
-
-      :is(.intro-heading-wrapper, .intro-content-wrapper).start {
-        opacity: 1;
-        transition: opacity 0.3s ease-out;
-      }
-
-      .bg-video {
-        filter: brightness(0%);
-        transition: filter 0.6s ease-out;
-      }
-
-      .bg-video.start {
-        filter: brightness(100%);
-      }
-
-
-    </style>
-
-
-
-  </head>
-  <body>
-
-    <nav>
-
-      <ul class="sidebar">
-          <li onclick="hideshow()"><a><i class="fa-solid fa-xmark fa-fade"></i></a></li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">our work</a></li>
-          <li><a href="#">partners</a></li>
-          <li><a href="#">services</a></li>
-          <li><a href="#">contact</a></li>
-
-      </ul>
-      <ul>
-          <li class="img_header"><img src="/assets/images/logo.png" width="40" height="40"></li>
-          <li class="hidemobile"><a href="#">Home</a></li>
-          <li class="hidemobile"><a href="#">About</a></li>
-          <li class="hidemobile"><a href="#">our work</a></li>
-          <li class="hidemobile"><a href="#">partners</a></li>
-          <li class="hidemobile"><a href="#">services</a></li>
-          <li class="hidemobile"><a href="#">contact</a></li>
-          <li class="menu_bar" onclick="showsidebar()"><a><i class="fa-solid fa-bars fa-fade"></i></a></li>
-
-      </ul>
+    </ul>
   </nav>
-   
 
-    <!-- Home Section -->
-    <section class="section section--intro">
-      <div class="intro__overlay"></div>
-      <div
-        class="w-layout-blockcontainer container container--intro w-container"
-      >
-        <div class="intro-content-wrapper">
-          <div class="intro-heading-wrapper">
-            <h1
-              id="w-node-_1976eec2-2137-229d-f3cb-bbcd46ea6aa2-95effebc"
-              class="heading--intro"
-            >
-              Get Your White Label With The Biggest Exchange
-            </h1>
-            <h1
-              id="w-node-eb094ce3-0c7d-a8b6-9358-13f8df086987-95effebc"
-              class="heading--intro"
-            >Celebrate Success with Our Leading White Label Exchange Solution
-            </h1>
-            <h1
-              id="w-node-c43e9dce-0a70-b22e-619a-e4b7fe416303-95effebc"
-              class="heading--intro"
-            >
+
+  <!-- Home Section -->
+  <section class="section section--intro" id="home">
+    <div class="intro__overlay"></div>
+    <div class="w-layout-blockcontainer container container--intro w-container">
+      <div class="intro-content-wrapper">
+        <div class="intro-heading-wrapper">
+          <h1 id="w-node-_1976eec2-2137-229d-f3cb-bbcd46ea6aa2-95effebc" class="heading--intro">
+            Get Your White Label With The Biggest Exchange
+          </h1>
+          <h1 id="w-node-eb094ce3-0c7d-a8b6-9358-13f8df086987-95effebc" class="heading--intro">Celebrate Success with
+            Our Leading White Label Exchange Solution
+          </h1>
+          <h1 id="w-node-c43e9dce-0a70-b22e-619a-e4b7fe416303-95effebc" class="heading--intro">
             Discover the Future of Betting with Our White Label Website Solutions
-            </h1>
+          </h1>
+        </div>
+        <div class="intro-sub-wrapper">
+          <div class="t--hide">
+            <div class="intro-content-text">
+              Sports betting software solutions redefine the betting experience. They offer user-friendly interfaces,
+              advanced analytics, and live betting options for novices and pros. These solutions are transforming the
+              industry, providing convenience and excitement. Explore your betting journey confidently with: Online and
+              Retail Sports Betting Software, B2C, Casino, and White Label options.
+            </div>
           </div>
-          <div class="intro-sub-wrapper">
-            <div class="t--hide">
-              <div class="intro-content-text">
-                Sports betting software solutions redefine the betting experience. They offer user-friendly interfaces, advanced analytics, and live betting options for novices and pros. These solutions are transforming the industry, providing convenience and excitement. Explore your betting journey confidently with: Online and Retail Sports Betting Software, B2C, Casino, and White Label options.
-              </div>
-            </div>
-            <div class="w-embed">
-              <style>
-                @keyframes scrolldown {
-                  0% {
-                    transform: translateY(0%);
-                  }
-                  3% {
-                    transform: translateY(-0.05rem);
-                  }
-                  16% {
-                    transform: translateY(0.475rem);
-                  }
-                  28% {
-                    transform: translateY(0%);
-                  }
+          <div class="w-embed">
+            <style>
+              @keyframes scrolldown {
+                0% {
+                  transform: translateY(0%);
+                }
 
-                  100% {
-                    transform: translateY(0%);
-                  }
+                3% {
+                  transform: translateY(-0.05rem);
                 }
-                .toggle__dot {
-                  animation: scrolldown 5s infinite;
-                  animation-delay: 1.75s;
+
+                16% {
+                  transform: translateY(0.475rem);
                 }
-              </style>
-            </div>
-            <!-- <div class="scroll-down-wrapper">
+
+                28% {
+                  transform: translateY(0%);
+                }
+
+                100% {
+                  transform: translateY(0%);
+                }
+              }
+
+              .toggle__dot {
+                animation: scrolldown 5s infinite;
+                animation-delay: 1.75s;
+              }
+            </style>
+          </div>
+          <!-- <div class="scroll-down-wrapper">
               <div class="scroll-down__toggle">
                 <div class="toggle__dot"></div>
               </div>
               <div>Scroll down</div>
             </div> -->
-          </div>
         </div>
       </div>
-      <div class="bg-video w-embed">
-        <video
-          class="bg-video desktop"
-          poster="https://assets-global.website-files.com/6514bebbe03b09dad031f32e/652d98987b501b65ea1b01a2_Netceed%20Animation%20Final%20FHD%20v1%20Render%20001_Main_0450.webp"
-          playsinline
-          muted
-          loop
-          autoplay
-          disableremoteplayback
-        >
-          <source
-            src="https://dl.dropbox.com/scl/fi/2dlx4rhwh2hjwf09hxiks/021bffa8-47b5-4b8c-8139-b9a575b61ee0.mp4?rlkey=wc2wv65b0vrik30w5x834fnab&dl=0"
-            type='video/mp4; codecs="hvc1"'
-          />
-          <source
-            src="https://dl.dropbox.com/scl/fi/l1t0ci1jnlceaz2v57dbt/Netceed-3D_Logo-Animation_v3.webm?rlkey=noua4zscoymp5st36zxkcdbni&dl=0"
-            type="video/webm"
-          />
-        </video>
-      </div>
-    </section>
-    
+    </div>
+    <div class="bg-video w-embed">
+      <video class="bg-video desktop"
+        poster="https://assets-global.website-files.com/6514bebbe03b09dad031f32e/652d98987b501b65ea1b01a2_Netceed%20Animation%20Final%20FHD%20v1%20Render%20001_Main_0450.webp"
+        playsinline muted loop autoplay disableremoteplayback>
+        <source
+          src="https://dl.dropbox.com/scl/fi/2dlx4rhwh2hjwf09hxiks/021bffa8-47b5-4b8c-8139-b9a575b61ee0.mp4?rlkey=wc2wv65b0vrik30w5x834fnab&dl=0"
+          type='video/mp4; codecs="hvc1"' />
+        <source
+          src="https://dl.dropbox.com/scl/fi/l1t0ci1jnlceaz2v57dbt/Netceed-3D_Logo-Animation_v3.webm?rlkey=noua4zscoymp5st36zxkcdbni&dl=0"
+          type="video/webm" />
+      </video>
+    </div>
+  </section>
 
-   
-<!-- second  -->
 
-<!-- Card Section -->
- 
-<section class="solutions">
-  <div class="highlighted-solutions container ">
+
+  <!-- second  -->
+
+  <!-- Card Section -->
+
+  <section class="solutions" id="our work">
+    <div class="highlighted-solutions container ">
       <div class="sub-title-row fx fx-ae card-heading">
-          <h3>OUR WORK</h3>
+        <h3>OUR WORK</h3>
       </div>
       <div class="elementor-widget-container shapemover-container">
-        <img decoding="async" src="https://tech.bikebuzzbd.com/wp-content/uploads/2023/08/ch-removebg-preview-1.png" alt="tech" class="shapeMover1 shapeanimation">
-          <!-- <img decoding="async" src="assest/bg1.jpg" alt="tech" class="shapeMover1 shapeanimation"> -->
+        <img decoding="async" src="https://tech.bikebuzzbd.com/wp-content/uploads/2023/08/ch-removebg-preview-1.png"
+          alt="tech" class="shapeMover1 shapeanimation">
+        <!-- <img decoding="async" src="assest/bg1.jpg" alt="tech" class="shapeMover1 shapeanimation"> -->
       </div>
       <div class="sl-cols sd-pad fx fx-wrap">
-          <div class="sl-col fx fx-wrap fx-ae shadow">
-              <div class="sl-graphic">
-                  <a class="sl-link" href="https://gullybet.vrnlexch.com/#/home/hot" target="_blank">
-                      <div class="sl-box-video">
-                          <div class="vd-wrap">
-                              <div class="vd-content">
-                                  <img src="assest/Untitled-6.png" alt="web image" class="card-image">
-                              </div>
-                          </div>
-                      </div>
-                  </a>
+        <div class="sl-col fx fx-wrap fx-ae shadow">
+          <div class="sl-graphic">
+            <a class="sl-link" href="https://gullybet.vrnlexch.com/#/home/hot" target="_blank">
+              <div class="sl-box-video">
+                <div class="vd-wrap">
+                  <div class="vd-content">
+                    <img src="assest/Untitled-6.png" alt="web image" class="card-image">
+                  </div>
+                </div>
               </div>
-              <div class="sl-info-row">
-                  <a class="sl-link" href="https://gullybet.vrnlexch.com/#/home/hot" target="_blank">
-                      <h4><strong>Gullybet</strong>
-                      </h4>
-                      
-                      <div class="st-row fx fx-je">
-                          <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
-                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20"
-                                  enable-background="new 0 0 22 20" xml:space="preserve">
-                                  <path fill="#CCA05D"
-                                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-              h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-                              </svg></div>
-                      </div>
-                  </a>
-              </div>
+            </a>
           </div>
+          <div class="sl-info-row">
+            <a class="sl-link" href="https://gullybet.vrnlexch.com/#/home/hot" target="_blank">
+              <h4><strong>Gullybet</strong>
+              </h4>
 
-          
-          <div class="sl-col fx fx-wrap fx-ae shadow">
-              <div class="sl-graphic">
-                  <a class="sl-link" href="https://9bazi.vrnlexch.com/#/dash" target="_blank">
-                      <div class="sl-box-video">
-                        <div class="vd-wrap">
-                          <div class="vd-content">
-                              <img src="assest/Untitled-3.png" alt="web image" class="card-image">
-                          </div>
-                      </div>
-                      </div>
-                  </a>
-              </div>
-              <div class="sl-info-row">
-                  <a class="sl-link" href="https://9bazi.vrnlexch.com/#/dash" target="_blank">
-                      <h4><strong>9bazi</strong>
-                      </h4>
-                      <div class="st-row fx fx-je">
-                          <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
-                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20"
-                                  enable-background="new 0 0 22 20" xml:space="preserve">
-                                  <path fill="#CCA05D"
-                                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+              <div class="st-row fx fx-je">
+                <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20"
+                    xml:space="preserve">
+                    <path fill="#CCA05D"
+                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
               h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-                              </svg></div>
-                      </div>
-                  </a>
+                  </svg></div>
               </div>
+            </a>
           </div>
+        </div>
 
 
-          <div class="sl-col fx fx-wrap fx-ae shadow">
-              <div class="sl-graphic">
-                  <a class="sl-link" href="https://lotus.vrnlexch.com/#/" target="_blank">
-                      <div class="sl-box-video">
-                        <div class="vd-wrap">
-                          <div class="vd-content">
-                              <img src="assest/Untitled-4.png" alt="web image" class="card-image">
-                          </div>
-                      </div>
-                      </div>
-                  </a>
+        <div class="sl-col fx fx-wrap fx-ae shadow">
+          <div class="sl-graphic">
+            <a class="sl-link" href="https://9bazi.vrnlexch.com/#/dash" target="_blank">
+              <div class="sl-box-video">
+                <div class="vd-wrap">
+                  <div class="vd-content">
+                    <img src="assest/Untitled-3.png" alt="web image" class="card-image">
+                  </div>
+                </div>
               </div>
-              <div class="sl-info-row">
-                  <a class="sl-link" href="https://lotus.vrnlexch.com/#/" target="_blank">
-                      <h4><strong>Lotus</strong>
-                      </h4>
-                      <div class="st-row fx fx-je">
-                          <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
-                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20"
-                                  enable-background="new 0 0 22 20" xml:space="preserve">
-                                  <path fill="#CCA05D"
-                                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+            </a>
+          </div>
+          <div class="sl-info-row">
+            <a class="sl-link" href="https://9bazi.vrnlexch.com/#/dash" target="_blank">
+              <h4><strong>9bazi</strong>
+              </h4>
+              <div class="st-row fx fx-je">
+                <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20"
+                    xml:space="preserve">
+                    <path fill="#CCA05D"
+                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
               h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-                              </svg></div>
-                      </div>
-                  </a>
+                  </svg></div>
               </div>
+            </a>
           </div>
+        </div>
 
-          <div class="sl-col fx fx-wrap fx-ae shadow">
-              <div class="sl-graphic">
-                  <a class="sl-link" href="https://babu88.vrnlexch.com/#/home" target="_blank">
-                      <div class="sl-box-video">
-                        <div class="vd-wrap">
-                          <div class="vd-content">
-                              <img src="assest/Untitled-5.png" alt="web image" class="card-image">
-                          </div>
-                      </div>
-                      </div>
-                  </a>
+
+        <div class="sl-col fx fx-wrap fx-ae shadow">
+          <div class="sl-graphic">
+            <a class="sl-link" href="https://lotus.vrnlexch.com/#/" target="_blank">
+              <div class="sl-box-video">
+                <div class="vd-wrap">
+                  <div class="vd-content">
+                    <img src="assest/Untitled-4.png" alt="web image" class="card-image">
+                  </div>
+                </div>
               </div>
-              <div class="sl-info-row">
-                  <a class="sl-link" href="https://babu88.vrnlexch.com/#/home" target="_blank">
-                      <h4><strong>Babu88</strong>
-                      </h4>
-                      <div class="st-row fx fx-je">
-                          <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
-                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20"
-                                  enable-background="new 0 0 22 20" xml:space="preserve">
-                                  <path fill="#CCA05D"
-                                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+            </a>
+          </div>
+          <div class="sl-info-row">
+            <a class="sl-link" href="https://lotus.vrnlexch.com/#/" target="_blank">
+              <h4><strong>Lotus</strong>
+              </h4>
+              <div class="st-row fx fx-je">
+                <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20"
+                    xml:space="preserve">
+                    <path fill="#CCA05D"
+                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
               h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-                              </svg></div>
-                      </div>
-                  </a>
+                  </svg></div>
               </div>
+            </a>
           </div>
+        </div>
 
-          <div class="sl-col fx fx-wrap fx-ae shadow">
-              <div class="sl-graphic">
-                  <a class="sl-link" href="https://vrnlexch.com/" target="_blank">
-                      <div class="sl-box-video">
-                        <div class="vd-wrap">
-                          <div class="vd-content">
-                              <img src="assest/Untitles-2.png" alt="web image" class="card-image">
-                          </div>
-                      </div>
-                      </div>
-                  </a>
+        <div class="sl-col fx fx-wrap fx-ae shadow">
+          <div class="sl-graphic">
+            <a class="sl-link" href="https://babu88.vrnlexch.com/#/home" target="_blank">
+              <div class="sl-box-video">
+                <div class="vd-wrap">
+                  <div class="vd-content">
+                    <img src="assest/Untitled-5.png" alt="web image" class="card-image">
+                  </div>
+                </div>
               </div>
-              <div class="sl-info-row">
-                  <a class="sl-link" href="https://vrnlexch.com/" target="_blank">
-                      <h4><strong>Vrnlexch</strong> 
-                      </h4>
-                      <div class="st-row fx fx-je">
-                          <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
-                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20"
-                                  enable-background="new 0 0 22 20" xml:space="preserve">
-                                  <path fill="#CCA05D"
-                                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+            </a>
+          </div>
+          <div class="sl-info-row">
+            <a class="sl-link" href="https://babu88.vrnlexch.com/#/home" target="_blank">
+              <h4><strong>Babu88</strong>
+              </h4>
+              <div class="st-row fx fx-je">
+                <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20"
+                    xml:space="preserve">
+                    <path fill="#CCA05D"
+                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
               h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-                              </svg></div>
-                      </div>
-                  </a>
+                  </svg></div>
               </div>
+            </a>
           </div>
+        </div>
 
-
-          <div class="sl-col fx fx-wrap fx-ae shadow">
-              <div class="sl-graphic">
-                  <a class="sl-link" href="https://velki.vrnlexch.com/#/home" target="_blank">
-                      <div class="sl-box-video">
-                        <div class="vd-wrap">
-                          <div class="vd-content">
-                              <img src="assest/Untitled-1.png" alt="web image" class="card-image">
-                          </div>
-                      </div>
-                      </div>
-                  </a>
+        <div class="sl-col fx fx-wrap fx-ae shadow">
+          <div class="sl-graphic">
+            <a class="sl-link" href="https://vrnlexch.com/" target="_blank">
+              <div class="sl-box-video">
+                <div class="vd-wrap">
+                  <div class="vd-content">
+                    <img src="assest/Untitles-2.png" alt="web image" class="card-image">
+                  </div>
+                </div>
               </div>
-              <div class="sl-info-row">
-                  <a class="sl-link" href="https://velki.vrnlexch.com/#/home" target="_blank">
-                      <h4><strong>Velki</strong>
-                      </h4>
-                      <div class="st-row fx fx-je">
-                          <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
-                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20"
-                                  enable-background="new 0 0 22 20" xml:space="preserve">
-                                  <path fill="#CCA05D"
-                                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+            </a>
+          </div>
+          <div class="sl-info-row">
+            <a class="sl-link" href="https://vrnlexch.com/" target="_blank">
+              <h4><strong>Vrnlexch</strong>
+              </h4>
+              <div class="st-row fx fx-je">
+                <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20"
+                    xml:space="preserve">
+                    <path fill="#CCA05D"
+                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
               h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-                              </svg></div>
-                      </div>
-                  </a>
+                  </svg></div>
               </div>
+            </a>
           </div>
-          
+        </div>
+
+
+        <div class="sl-col fx fx-wrap fx-ae shadow">
+          <div class="sl-graphic">
+            <a class="sl-link" href="https://velki.vrnlexch.com/#/home" target="_blank">
+              <div class="sl-box-video">
+                <div class="vd-wrap">
+                  <div class="vd-content">
+                    <img src="assest/Untitled-1.png" alt="web image" class="card-image">
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="sl-info-row">
+            <a class="sl-link" href="https://velki.vrnlexch.com/#/home" target="_blank">
+              <h4><strong>Velki</strong>
+              </h4>
+              <div class="st-row fx fx-je">
+                <div class="arrow-link fx fx-jc fx-ac"><svg version="1.1" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20"
+                    xml:space="preserve">
+                    <path fill="#CCA05D"
+                      d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+              h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                  </svg></div>
+              </div>
+            </a>
+          </div>
+        </div>
+
       </div>
-  </div>
-
-</section> 
-
-
-<!-- casino -->
-<section class="con_card">
-  <div class="elementor-widget-container1">
-    <img decoding="async" src="assest/round2 copy.png" alt="tech" class="shapeMover shapeanimation" style="top:52px;left:-20px;-webkit-animation-duration:9s; animation-duration: 9s;-webkit-animation-name:shapeMover;
-  animation-name: shapeMover;">		</div>  
-  <div class="green-block">
-    <a
-      href="/solutions-for-online-gambling"
-      class="green-block-link w-inline-block"
-    ></a
-    ><link rel="prefetch" href="/solutions-for-online-gambling" />
-    <div class="green-h-wrapper">
-      <h2 class="_56-heading white left no-top">
-        THE <span class="greenspan">Best </span
-        ><span class="greenspan">SOlutions</span
-        ><span class="greenspan"><br /></span>FOR
-        <span class="text-span-167">i</span>GAMING
-      </h2>
     </div>
-    <div class="green-description">
-      Platform<br />White-label<br />Turnkey
+
+  </section>
+
+
+  <!-- casino -->
+  <section class="con_card">
+    <div class="elementor-widget-container1">
+      <img decoding="async" src="assest/round2 copy.png" alt="tech" class="shapeMover shapeanimation" style="top:52px;left:-20px;-webkit-animation-duration:9s; animation-duration: 9s;-webkit-animation-name:shapeMover;
+  animation-name: shapeMover;">
     </div>
-    <a href="/leadership" class="arrow-link left w-inline-block"
-      ><img
-        src="https://assets-global.website-files.com/61112348aee4848e30506466/6216062b49f0ef6ccf177798_Frame%20711419.svg"
-        loading="lazy"
-        alt=""
-        class="image-93" /></a
-    ><img
-      src="https://assets-global.website-files.com/61112348aee4848e30506466/6260fec70f2f9c0585e645b9_Achivements_mob%20(1).webp"
-      loading="eager"
-      srcset="
+    <div class="green-block">
+      <a href="/solutions-for-online-gambling" class="green-block-link w-inline-block"></a>
+      <link rel="prefetch" href="/solutions-for-online-gambling" />
+      <div class="green-h-wrapper">
+        <h2 class="_56-heading white left no-top">
+          THE <span class="greenspan">Best </span><span class="greenspan">SOlutions</span><span
+            class="greenspan"><br /></span>FOR
+          <span class="text-span-167">i</span>GAMING
+        </h2>
+      </div>
+      <div class="green-description">
+        Platform<br />White-label<br />Turnkey
+      </div>
+      <a href="/leadership" class="arrow-link left w-inline-block"><img
+          src="https://assets-global.website-files.com/61112348aee4848e30506466/6216062b49f0ef6ccf177798_Frame%20711419.svg"
+          loading="lazy" alt="" class="image-93" /></a><img
+        src="https://assets-global.website-files.com/61112348aee4848e30506466/6260fec70f2f9c0585e645b9_Achivements_mob%20(1).webp"
+        loading="eager" srcset="
         https://assets-global.website-files.com/61112348aee4848e30506466/6260fec70f2f9c0585e645b9_Achivements_mob%20(1)-p-500.webp   500w,
         https://assets-global.website-files.com/61112348aee4848e30506466/6260fec70f2f9c0585e645b9_Achivements_mob%20(1)-p-800.webp   800w,
         https://assets-global.website-files.com/61112348aee4848e30506466/6260fec70f2f9c0585e645b9_Achivements_mob%20(1)-p-1080.webp 1080w,
         https://assets-global.website-files.com/61112348aee4848e30506466/6260fec70f2f9c0585e645b9_Achivements_mob%20(1)-p-1600.webp 1600w,
         https://assets-global.website-files.com/61112348aee4848e30506466/6260fec70f2f9c0585e645b9_Achivements_mob%20(1).webp        1712w
-      "
-      sizes="(max-width: 479px) 100vw, (max-width: 767px) 93vw, (max-width: 991px) 94vw, (max-width: 1439px) 95vw, 1200.25px"
-      alt=""
-      class="image-91"
-    />
-  </div>
+      " sizes="(max-width: 479px) 100vw, (max-width: 767px) 93vw, (max-width: 991px) 94vw, (max-width: 1439px) 95vw, 1200.25px"
+        alt="" class="image-91" />
+    </div>
 
-</section>
+  </section>
 
 
- <!-- shruti -->
+  <!-- shruti -->
 
- <section class="sh-card" >
-  <div class="sl-boxes sd-pad fx fx-wrap fx-wrapper">
+  <section class="sh-card">
+    <div class="sl-boxes sd-pad fx fx-wrap fx-wrapper">
       <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated" sty>
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >		</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>
-            
-      </div>
-      </div>
-      </div>
-          </div>
-          <img class="inner-image" src="assest/images/secure_payment.icon-removebg-preview.png" 
- >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4><strong>Sportbook</strong> 
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>A new level of excitement in the online gaming industry. Live dealers make players feel as if they are gambling in a real casino.</p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-
-      <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >		</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>
-            
-      </div>
-      </div>
-      </div>
-          </div>
-  <img class="inner-image" src="assest/images/crm.icon.png" >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4><strong>Slots</strong>
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>A leading range of video slots, from the old school and classic to new-fashioned ones, available for different demographics.</p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-      <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >		</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>
-            
-      </div>
-      </div>
-      </div>
-          </div>
-  <img class="inner-image" src="assest/images/Live_chat.icon-removebg-preview.png" alt="" >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4><strong>Live</strong> chat
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>Chatbot is a game changer regarding customer support. It allows operators to assist a large number of players in real-time and turn their problems into a positive customer service experience. </p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-
-      <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >		</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>
-            
-      </div>
-      </div>
-      </div>
-          </div>
-  <img class="inner-image" src="assest/images/virtual game (1).png" alt="" >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4><strong>Virtual</strong> games
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>Set to provide players with a true-life gambling environment, where they can play real games in real time with real people.</p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-      <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >		</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>
-            
-      </div>
-      </div>
-      </div>
-          </div>
-  <img class="inner-image" src="assest/images/secure_payment.icon-removebg-preview.png" alt="" >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4><strong>Secure payment</strong> system
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>Smooth and secure online payment experience for all casino website visitors with widely used international payment methods.</p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-      <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >	</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>        
-      </div>
-      </div>
-      </div>
-          </div>
-  <img class="inner-image" src="assest/images/crm.icon.png" alt="" >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4><strong>CRM</strong>
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>Customer relationship management software for casinos is inevitable management support when it comes to taking care of clients.</p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-      <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >		</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>
-            
-      </div>
-      </div>
-      </div>
-          </div>
-  <img class="inner-image" src="assest/images/advance_repotin.icon-removebg-preview.png" alt="" >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4><strong>KYC</strong> services
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>An exceptionally valuable asset for collecting and identifying documents from new customers, with the minimum player churn possible.</p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-      <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >		</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>
-            
-      </div>
-      </div>
-      </div>
-          </div>
-  <img class="inner-image" src="assest/images/advance_repotin.icon-removebg-preview.png" alt="" >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4>Advanced <strong>reporting tools</strong>
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>An extensive collection of advanced reporting tools that cover all casino’s daily operations and enable the optimization of your business performance.</p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-      <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >		</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>
-            
-      </div>
-      </div>
-      </div>
-          </div>
-  <img class="inner-image" src="assest/images/bonus.icon-removebg-preview.png" alt="" >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4><strong>Bonuses</strong> and loyalty programs
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>The variety of promotional offerings is a proven way to keep satisfied regular players, reward their devotion, and attract new ones.</p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-      <div class="sl-box ">
-              <div class="sl-icon fx fx-ac fx-jc">
-                  <div class="elementor-widget-wrap elementor-element-populated">
-                      <div class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape" data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
-      <div class="elementor-widget-container" style="position: relative;">
-          <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation" style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;"
-          >		</div>
-      </div>
-      <div class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
-      <div class="elementor-widget-container">
-      <link rel="stylesheet" href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">		<div class="elementor-icon-box-wrapper">
-              <div class="elementor-icon-box-icon">
-      <span class="elementor-icon elementor-animation-">
-      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i>				</span>
-      </div>
-            
-      </div>
-      </div>
-      </div>
-          </div>
-  <img class="inner-image" src="assest/images/fraud.icon.png" alt="" >
-</div>
-
-              <div class="sl-title-row fx fx-ac fx-jc">
-  <h4><strong>Anti-fraud</strong> protection
-</h4>
-</div>
-<div class="sl-desc-row">
-  <div class="sl-desc"><p>Based on the latest technology, comprehensive anti-fraud tools prevent, detect, and respond to every possible fraud risk to the online casino.</p>
-</div>
-  <div class="read-more-link fx">
-      <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
-          <span>Read more</span>
-          <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
-<path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
-  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
-</svg></div>
-      </a>
-  </div>
-</div>
-</div>
-
-  </div>
-</section>
-
-
-<!-- About Section -->
-
-<section class="mt-[70px] sm:mt-[115px] px-4 xl:px-0" id="about">
-  <div class="max-w-[1296px] mx-auto grid grid-cols-12 items-center gap-6">
-      <div class="col-span-12 lg:col-end-6 relative flex flex-col gap-6">
-          <div class="rfm-marquee-container overflow-y-hidden"
-              style="--pause-on-hover: running; --pause-on-click: running; --width: 100%; --transform: none;">
-              <div class="rfm-marquee"
-                  style="--play: running; --direction: normal; --duration: 26.64s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
-                  <div class="rfm-initial-child-container">
-                      <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                              width="200" height="100" decoding="async" data-nimg="1"
-                              class="mx-3 rounded-xl hover:scale-110 duration-300"
-                              src="assest/bg gaming.png" alt="Supernowa" style="color: transparent;"></div>
-                      <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                              width="200" height="100" decoding="async" data-nimg="1"
-                              class="mx-3 rounded-xl hover:scale-110 duration-300"
-                              src="assest/cf icon.png" alt="Poker" style="color: transparent;"></div>
-                      <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                              width="200" height="100" decoding="async" data-nimg="1"
-                              class="mx-3 rounded-xl hover:scale-110 duration-300"
-                              src="assest/dragon soft.png" alt="Ezugi" style="color: transparent;"></div>
-                      <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                              width="200" height="100" decoding="async" data-nimg="1"
-                              class="mx-3 rounded-xl hover:scale-110 duration-300"
-                              src="assest/E1 sports.png" alt="Qtech" style="color: transparent;"></div>
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated" sty>
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
                   </div>
+
+                </div>
               </div>
-              <div class="rfm-marquee"
-                  style="--play: running; --direction: normal; --duration: 26.64s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
-                  <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                          width="200" height="100" decoding="async" data-nimg="1"
-                          class="mx-3 rounded-xl hover:scale-110 duration-300" src="assest/jdb 2.png"
-                          alt="Super Spade" style="color: transparent;"></div>
-                  <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                          width="200" height="100" decoding="async" data-nimg="1"
-                          class="mx-3 rounded-xl hover:scale-110 duration-300" src="assest/jili.png"
-                          alt="Supernowa" style="color: transparent;"></div>
-                  <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                          width="200" height="100" decoding="async" data-nimg="1"
-                          class="mx-3 rounded-xl hover:scale-110 duration-300" src="assest/kingmaker.png"
-                          alt="Poker" style="color: transparent;"></div>
-                  <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                          width="200" height="100" decoding="async" data-nimg="1"
-                          class="mx-3 rounded-xl hover:scale-110 duration-300" src="assest/sexybcrt.png"
-                          alt="Ezugi" style="color: transparent;"></div>
-              </div>
+            </div>
           </div>
-         <div class="rfm-marquee-container overflow-y-hidden"
-              style="--pause-on-hover: running; --pause-on-click: running; --width: 100%; --transform: none;">
-              <div class="rfm-marquee"
-                  style="--play: running; --direction: reverse; --duration: 26.64s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
-                  <div class="rfm-initial-child-container">
-                      <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                              width="200" height="100" decoding="async" data-nimg="1"
-                              class="mx-3 rounded-xl hover:scale-110 duration-300"
-                              src="assest/red tiger.png" alt="Qtech" style="color: transparent;"></div>
-                      <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                              width="200" height="100" decoding="async" data-nimg="1"
-                              class="mx-3 rounded-xl hover:scale-110 duration-300"
-                              src="assest/saba logo.jpg" alt="Supernowa" style="color: transparent;"></div>
-                      <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                              width="200" height="100" decoding="async" data-nimg="1"
-                              class="mx-3 rounded-xl hover:scale-110 duration-300"
-                              src="assest/sexybcrt.png" alt="Poker" style="color: transparent;"></div>
-                      <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                              width="200" height="100" decoding="async" data-nimg="1"
-                              class="mx-3 rounded-xl hover:scale-110 duration-300"
-                              src="assest/supernowa.gif" alt="Ezugi" style="color: transparent;"></div>
-                  </div> 
+          <img class="inner-image" src="assest/images/secure_payment.icon-removebg-preview.png">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4><strong>Sportbook</strong>
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>A new level of excitement in the online gaming industry. Live dealers make players feel as if they are
+              gambling in a real casino.</p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sl-box ">
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
               </div>
-              <div class="rfm-marquee"
-                  style="--play: running; --direction: reverse; --duration: 26.64s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
-                  <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                          width="200" height="100" decoding="async" data-nimg="1"
-                          class="mx-3 rounded-xl hover:scale-110 duration-300" src="assest/sv380.png"
-                          alt="Qtech" style="color: transparent;"></div>
-                  <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                          width="200" height="100" decoding="async" data-nimg="1"
-                          class="mx-3 rounded-xl hover:scale-110 duration-300" src="assest/bg gaming.png"
-                          alt="Supernowa" style="color: transparent;"></div>
-                  <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                          width="200" height="100" decoding="async" data-nimg="1"
-                          class="mx-3 rounded-xl hover:scale-110 duration-300" src="assest/cf icon.png"
-                          alt="Ezugi" style="color: transparent;"></div>
-                  <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy"
-                          width="200" height="100" decoding="async" data-nimg="1"
-                          class="mx-3 rounded-xl hover:scale-110 duration-300" src="assest/dragon soft.png"
-                          alt="Qtech" style="color: transparent;"></div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
+                  </div>
+
+                </div>
               </div>
-          </div> 
+            </div>
+          </div>
+          <img class="inner-image" src="assest/images/crm.icon.png">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4><strong>Slots</strong>
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>A leading range of video slots, from the old school and classic to new-fashioned ones, available for
+              different demographics.</p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="sl-box ">
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="inner-image" src="assest/images/Live_chat.icon-removebg-preview.png" alt="">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4><strong>Live</strong> chat
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>Chatbot is a game changer regarding customer support. It allows operators to assist a large number of
+              players in real-time and turn their problems into a positive customer service experience. </p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sl-box ">
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="inner-image" src="assest/images/virtual game (1).png" alt="">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4><strong>Virtual</strong> games
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>Set to provide players with a true-life gambling environment, where they can play real games in real time
+              with real people.</p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="sl-box ">
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="inner-image" src="assest/images/secure_payment.icon-removebg-preview.png" alt="">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4><strong>Secure payment</strong> system
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>Smooth and secure online payment experience for all casino website visitors with widely used
+              international payment methods.</p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="sl-box ">
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="inner-image" src="assest/images/crm.icon.png" alt="">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4><strong>CRM</strong>
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>Customer relationship management software for casinos is inevitable management support when it comes to
+              taking care of clients.</p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="sl-box ">
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="inner-image" src="assest/images/advance_repotin.icon-removebg-preview.png" alt="">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4><strong>KYC</strong> services
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>An exceptionally valuable asset for collecting and identifying documents from new customers, with the
+              minimum player churn possible.</p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="sl-box ">
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="inner-image" src="assest/images/advance_repotin.icon-removebg-preview.png" alt="">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4>Advanced <strong>reporting tools</strong>
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>An extensive collection of advanced reporting tools that cover all casino’s daily operations and enable
+              the optimization of your business performance.</p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="sl-box ">
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="inner-image" src="assest/images/bonus.icon-removebg-preview.png" alt="">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4><strong>Bonuses</strong> and loyalty programs
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>The variety of promotional offerings is a proven way to keep satisfied regular players, reward their
+              devotion, and attract new ones.</p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="sl-box ">
+        <div class="sl-icon fx fx-ac fx-jc">
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-45fa678 elementor-widget elementor-widget-tech_Animation_shape"
+              data-id="45fa678" data-element_type="widget" data-widget_type="tech_Animation_shape.default">
+              <div class="elementor-widget-container" style="position: relative;">
+                <img decoding="async" src="assest/images/green.png" alt="tech" class="shapeMover shapeanimation"
+                  style="top: 4px; left: 123px; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-name: shapeMover; animation-name: shapeMover; animation-iteration-count: infinite;">
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-b712d8b elementor-view-stacked elementor-shape-circle elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box"
+              data-id="b712d8b" data-element_type="widget" data-widget_type="icon-box.default">
+              <div class="elementor-widget-container">
+                <link rel="stylesheet"
+                  href="https://tech.bikebuzzbd.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                <div class="elementor-icon-box-wrapper">
+                  <div class="elementor-icon-box-icon">
+                    <span class="elementor-icon elementor-animation-">
+                      <i aria-hidden="true" class="flaticon flaticon-cogwheels"></i> </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="inner-image" src="assest/images/fraud.icon.png" alt="">
+        </div>
+
+        <div class="sl-title-row fx fx-ac fx-jc">
+          <h4><strong>Anti-fraud</strong> protection
+          </h4>
+        </div>
+        <div class="sl-desc-row">
+          <div class="sl-desc">
+            <p>Based on the latest technology, comprehensive anti-fraud tools prevent, detect, and respond to every
+              possible fraud risk to the online casino.</p>
+          </div>
+          <div class="read-more-link fx">
+            <a href="https://www.quantumgaming.com/solutions" class="fx fx-ac">
+              <span>Read more</span>
+              <div class="link-arrow"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px"
+                  viewBox="0 0 22 20" enable-background="new 0 0 22 20" xml:space="preserve">
+                  <path fill="#CCA05D" d="M21.991,9.511C21.916,9.487,14.488,7.018,12.374,0l-0.971,0.287c1.524,5.06,5.503,7.87,8.041,9.199H0v1.003
+  h19.542c-2.438,1.328-6.319,4.133-8.131,9.175L12.366,20c2.524-7.023,9.563-9.514,9.634-9.538L21.991,9.511z"></path>
+                </svg></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- About Section -->
+
+  <section class="mt-[70px] sm:mt-[115px] px-4 xl:px-0" id="about">
+    <div class="max-w-[1296px] mx-auto grid grid-cols-12 items-center gap-6">
+      <div class="col-span-12 lg:col-end-6 relative flex flex-col gap-6">
+        <div class="rfm-marquee-container overflow-y-hidden"
+          style="--pause-on-hover: running; --pause-on-click: running; --width: 100%; --transform: none;">
+          <div class="rfm-marquee"
+            style="--play: running; --direction: normal; --duration: 26.64s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+            <div class="rfm-initial-child-container">
+              <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                  decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                  src="assest/bg gaming.png" alt="Supernowa" style="color: transparent;"></div>
+              <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                  decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                  src="assest/cf icon.png" alt="Poker" style="color: transparent;"></div>
+              <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                  decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                  src="assest/dragon soft.png" alt="Ezugi" style="color: transparent;"></div>
+              <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                  decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                  src="assest/E1 sports.png" alt="Qtech" style="color: transparent;"></div>
+            </div>
+          </div>
+          <div class="rfm-marquee"
+            style="--play: running; --direction: normal; --duration: 26.64s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+            <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                src="assest/jdb 2.png" alt="Super Spade" style="color: transparent;"></div>
+            <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                src="assest/jili.png" alt="Supernowa" style="color: transparent;"></div>
+            <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                src="assest/kingmaker.png" alt="Poker" style="color: transparent;"></div>
+            <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                src="assest/sexybcrt.png" alt="Ezugi" style="color: transparent;"></div>
+          </div>
+        </div>
+        <div class="rfm-marquee-container overflow-y-hidden"
+          style="--pause-on-hover: running; --pause-on-click: running; --width: 100%; --transform: none;">
+          <div class="rfm-marquee"
+            style="--play: running; --direction: reverse; --duration: 26.64s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+            <div class="rfm-initial-child-container">
+              <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                  decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                  src="assest/red tiger.png" alt="Qtech" style="color: transparent;"></div>
+              <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                  decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                  src="assest/saba logo.jpg" alt="Supernowa" style="color: transparent;"></div>
+              <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                  decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                  src="assest/sexybcrt.png" alt="Poker" style="color: transparent;"></div>
+              <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                  decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                  src="assest/supernowa.gif" alt="Ezugi" style="color: transparent;"></div>
+            </div>
+          </div>
+          <div class="rfm-marquee"
+            style="--play: running; --direction: reverse; --duration: 26.64s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+            <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                src="assest/sv380.png" alt="Qtech" style="color: transparent;"></div>
+            <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                src="assest/bg gaming.png" alt="Supernowa" style="color: transparent;"></div>
+            <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                src="assest/cf icon.png" alt="Ezugi" style="color: transparent;"></div>
+            <div class="rfm-child" style="--transform: none;"><img alt="img" loading="lazy" width="200" height="100"
+                decoding="async" data-nimg="1" class="mx-3 rounded-xl hover:scale-110 duration-300"
+                src="assest/dragon soft.png" alt="Qtech" style="color: transparent;"></div>
+          </div>
+        </div>
       </div>
       <div class="col-span-12 lg:col-span-6 mt-[35px] md:mt-[55px]">
-          <h5 class="heading-5" style="color: #9eff00;font-weight: bold;">Play &amp; Win, Stake &amp; earny!
-          </h5>
-          <div class="mt-[10px]">
-              <h2 class="heading-2 text-white">About The VRNL</h2>
-          </div>
-          <p class="mt-[15px]" style="font-size: 20px; color: white;">VRNL is a trusted and secure platform for
-              betting. We are the first platform in India to offer round-the-clock service.We are the
-              top exchange in the country, providing you with better betting opportunities. We are
-              dedicated to creating an exceptional betting environment for Indian users.</p>
-          <p class="mt-[10px]" style="font-size: 20px; color: white;">The widest selection of entertainment games
-              available with 3,000+ games. Our platform is easy to use and provides remarkable
-              exprerience to the user.</p>
-          <div class="mt-[35px]"><a class="btn  btn--primary" href="/#contact"><svg
-                      stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512"
-                      class="text-[24px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                          d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z">
-                      </path>
-                  </svg> CONTACT US</a></div>
+        <h5 class="heading-5" style="color: #9eff00;font-weight: bold;">Play &amp; Win, Stake &amp; earny!
+        </h5>
+        <div class="mt-[10px]">
+          <h2 class="heading-2 text-white">About The VRNL</h2>
+        </div>
+        <p class="mt-[15px]" style="font-size: 20px; color: white;">VRNL is a trusted and secure platform for
+          betting. We are the first platform in India to offer round-the-clock service.We are the
+          top exchange in the country, providing you with better betting opportunities. We are
+          dedicated to creating an exceptional betting environment for Indian users.</p>
+        <p class="mt-[10px]" style="font-size: 20px; color: white;">The widest selection of entertainment games
+          available with 3,000+ games. Our platform is easy to use and provides remarkable
+          exprerience to the user.</p>
+        <div class="mt-[35px]"><a class="btn  btn--primary" href="/#contact">
+              <path
+                d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z">
+              </path>
+            </svg> CONTACT US</a></div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-  
-<!-- Providers -->
-<div class="providers-section" style="background-color: #1e212b;">
-  <div class="black-gradient inviz"></div>
-  <div class="black-gradient inviz"></div>
-  <div class="black-gradient flip"></div>
-  <div class="black-gradient flip"></div>
-  <div class="container no-margin no-right">
+
+  <!-- Providers -->
+  <div class="providers-section" style="background-color: #1e212b;">
+    <div class="black-gradient inviz"></div>
+    <div class="black-gradient inviz"></div>
+    <div class="black-gradient flip"></div>
+    <div class="black-gradient flip"></div>
+    <div class="container no-margin no-right">
       <div data-duration-in="300" data-duration-out="100" data-current="Tab 1" data-easing="ease"
-          class="tabs-main w-tabs">
-          <div class="tabs-menu _65 w-tab-menu" role="tablist"><a data-w-tab="Tab 1"
-                  class="tab-link-tab-1 w-inline-block w-tab-link w--current" id="w-tabs-0-data-w-tab-0"
-                  href="#w-tabs-0-data-w-pane-0" role="tab" aria-controls="w-tabs-0-data-w-pane-0"
-                  aria-selected="true">
-                  <div class="partners-main">
-                      <div data-w-id="fc0fb796-4cca-285e-74ae-e116cfb2d309"
-                          style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                          class="arrow-link absolut invisbl"><img
-                              src="https://assets-global.website-files.com/61112348aee4848e30506466/6216062b49f0ef6ccf177798_Frame%20711419.svg"
-                              loading="lazy" alt="" class="image-93"></div>
-                      <div class="_56-heading white"><span class="greenspan _120">120<br></span>Gaming
-                          providers</div>
-                  </div>
-              </a></div>
-          <div class="tabs-content w-tab-content">
-              <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active"
-                  id="w-tabs-0-data-w-pane-0" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-0"><a
-                      href="/partners" class="link-block-11 w-inline-block"></a>
-                  <div class="providers-wrapper">
-                      <div data-w-id="52b35127-83c2-175f-a03c-fba47681eb14"
-                          class="samples-container shadows right">
-                          <div data-w-id="52b35127-83c2-175f-a03c-fba47681eb15" class="sample-set-4"
-                              style="transform: translate3d(0px, -19.3005%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
-                              <div class="w-dyn-list">
-                                  <div role="list" class="w-dyn-items">
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8a31a37ef99531f10c36_pragmaticplay.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8760ae351cc4a5ea2a06_netent.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc87141638a93628d22405_evolutiongaming.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc878f81bbe0508463fec3_play%E2%80%99ngo.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be41ead7edf04a046ae739_spinomenal.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc86fff8002d1db99b2d75_elk.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8a6c9932761a320cfcf7_quickspin.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc877706c46742ff0d5cd5_nolimitcity.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be454e5662f799098aa5e0_pushgaming.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8aa6b7a711b940b2b500_yggdrasil.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc86c5ae351c6bd8ea2970_microgaming.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be406bd143ca2743faf273_pg%20(1).svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8a7e26bb0206ec8b1be6_redtiger.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                      <div role="listitem" class="collection-item-3 w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8a90c4f2070105cb14f5_relaxgaming.svg"
-                                                  class="image-17"></div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div data-w-id="52b35127-83c2-175f-a03c-fba47681eb1e" class="sample-set-4 up"
-                              style="transform: translate3d(0px, -49.2149%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
-                              <div class="w-dyn-list">
-                                  <div role="list" class="w-dyn-items">
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be47f6d742df94389910e5_isoftbet.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3908d143ca17b9faccf2_bf.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be48c2c455c24c772d49b1_1x2%20(1).svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be474dbb1f2f0e5d1cea01_skywind.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be45b3bb1f2fa2ba1cd6f5_wazdan.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be4218d4648ec6cc4f949c_tomhorn%20(1).svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/65152f9016608fd9494ea2ab_ela-s2b.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/64c371662e110fd8a64cba82_61bc8a5304f223e81badd459_provider_novomatic%201.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc86da26bb02ccb08aeed3_amatic.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc89a2b5f5727643274632_playtech.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc86eeb5f5726582273dc0_egt.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be46f64af16cc23e003e7d_playson%20(1).svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be4672b2f1c6dd71aa2408_playson.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be4ba664949960c906e652_betsoft.svg"
-                                                  class="image-19"></div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div data-w-id="52b35127-83c2-175f-a03c-fba47681eb27" class="sample-set-4 inviz"
-                              style="transform: translate3d(0px, -19.3005%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
-                              <div class="w-dyn-list">
-                                  <div role="list" class="w-dyn-items">
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3f95ed803d19e97dedfd_merkur%20(2).svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3e6fd143ca299dfae3ff_irondog.svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be437cc455c237fe2d13ac_casinotechnology.svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3fe4dd18082a379ae42e_pg.svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be35ae8d239c268bf5e8a8_oryxgaming%20(1).svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be368fb67113a68ceb7367_oryxgaming%20(2).svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3729b5e5903966d98c3e_givme.svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be37c2d2b85b1b9d089fe6_Goldenhero.svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be44b1420d04003e1c120a_redrake.svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61ee5839b1ac1a3b244d31c0_inspired%20(2).svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be4c39ce1c91335a9c3f3b_leap%20(1).svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be495c3de0fd0bef7bf706_netgaming%20(1).svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61c219cdfdd84f1a95ec5f2f_g.games.svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                      <div role="listitem" class="w-dyn-item">
-                                          <div class="provider"><img alt="" loading="lazy"
-                                                  src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be47a68d239cbbc6f66f7b_pariplay.svg"
-                                                  class="image-18"></div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+        class="tabs-main w-tabs">
+        <div class="tabs-menu _65 w-tab-menu" role="tablist"><a data-w-tab="Tab 1"
+            class="tab-link-tab-1 w-inline-block w-tab-link w--current" id="w-tabs-0-data-w-tab-0"
+            href="#w-tabs-0-data-w-pane-0" role="tab" aria-controls="w-tabs-0-data-w-pane-0" aria-selected="true">
+            <div class="partners-main">
+              <div data-w-id="fc0fb796-4cca-285e-74ae-e116cfb2d309"
+                style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                class="arrow-link absolut invisbl"><img
+                  src="https://assets-global.website-files.com/61112348aee4848e30506466/6216062b49f0ef6ccf177798_Frame%20711419.svg"
+                  loading="lazy" alt="" class="image-93"></div>
+              <div class="_56-heading white" style="color: #9eff00"><span class="greenspan _120"></span>OUR CLIENTS</div>
+            </div>
+          </a></div>
+        <div class="tabs-content w-tab-content">
+          <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active" id="w-tabs-0-data-w-pane-0"
+            role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-0"><a href="/partners"
+              class="link-block-11 w-inline-block"></a>
+            <div class="providers-wrapper">
+              <div data-w-id="52b35127-83c2-175f-a03c-fba47681eb14" class="samples-container shadows right">
+                <div data-w-id="52b35127-83c2-175f-a03c-fba47681eb15" class="sample-set-4"
+                  style="transform: translate3d(0px, -19.3005%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
+                  <div class="w-dyn-list">
+                    <div role="list" class="w-dyn-items">
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8a31a37ef99531f10c36_pragmaticplay.svg"
+                            class="image-17"></div>
                       </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8760ae351cc4a5ea2a06_netent.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc87141638a93628d22405_evolutiongaming.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc878f81bbe0508463fec3_play%E2%80%99ngo.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be41ead7edf04a046ae739_spinomenal.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc86fff8002d1db99b2d75_elk.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8a6c9932761a320cfcf7_quickspin.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc877706c46742ff0d5cd5_nolimitcity.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be454e5662f799098aa5e0_pushgaming.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8aa6b7a711b940b2b500_yggdrasil.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc86c5ae351c6bd8ea2970_microgaming.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be406bd143ca2743faf273_pg%20(1).svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8a7e26bb0206ec8b1be6_redtiger.svg"
+                            class="image-17"></div>
+                      </div>
+                      <div role="listitem" class="collection-item-3 w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc8a90c4f2070105cb14f5_relaxgaming.svg"
+                            class="image-17"></div>
+                      </div>
+                    </div>
                   </div>
+                </div>
+                <div data-w-id="52b35127-83c2-175f-a03c-fba47681eb1e" class="sample-set-4 up"
+                  style="transform: translate3d(0px, -49.2149%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
+                  <div class="w-dyn-list">
+                    <div role="list" class="w-dyn-items">
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be47f6d742df94389910e5_isoftbet.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3908d143ca17b9faccf2_bf.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be48c2c455c24c772d49b1_1x2%20(1).svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be474dbb1f2f0e5d1cea01_skywind.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be45b3bb1f2fa2ba1cd6f5_wazdan.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be4218d4648ec6cc4f949c_tomhorn%20(1).svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/65152f9016608fd9494ea2ab_ela-s2b.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/64c371662e110fd8a64cba82_61bc8a5304f223e81badd459_provider_novomatic%201.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc86da26bb02ccb08aeed3_amatic.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc89a2b5f5727643274632_playtech.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61bc86eeb5f5726582273dc0_egt.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be46f64af16cc23e003e7d_playson%20(1).svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be4672b2f1c6dd71aa2408_playson.svg"
+                            class="image-19"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be4ba664949960c906e652_betsoft.svg"
+                            class="image-19"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-w-id="52b35127-83c2-175f-a03c-fba47681eb27" class="sample-set-4 inviz"
+                  style="transform: translate3d(0px, -19.3005%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;">
+                  <div class="w-dyn-list">
+                    <div role="list" class="w-dyn-items">
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3f95ed803d19e97dedfd_merkur%20(2).svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3e6fd143ca299dfae3ff_irondog.svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be437cc455c237fe2d13ac_casinotechnology.svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3fe4dd18082a379ae42e_pg.svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be35ae8d239c268bf5e8a8_oryxgaming%20(1).svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be368fb67113a68ceb7367_oryxgaming%20(2).svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be3729b5e5903966d98c3e_givme.svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be37c2d2b85b1b9d089fe6_Goldenhero.svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be44b1420d04003e1c120a_redrake.svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61ee5839b1ac1a3b244d31c0_inspired%20(2).svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be4c39ce1c91335a9c3f3b_leap%20(1).svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be495c3de0fd0bef7bf706_netgaming%20(1).svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61c219cdfdd84f1a95ec5f2f_g.games.svg"
+                            class="image-18"></div>
+                      </div>
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="provider"><img alt="" loading="lazy"
+                            src="https://assets-global.website-files.com/6120a7cbe0bf26ccc35177df/61be47a68d239cbbc6f66f7b_pariplay.svg"
+                            class="image-18"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
+        </div>
       </div>
-  </div><a href="https://www.soft2bet.com/partners/#gaming" class="providers-link prov w-inline-block"></a>
-  <link rel="prefetch" href="https://www.soft2bet.com/partners/#gaming">
-</div>
+    </div><a href="https://cricbuzzer.io/#/dash" target="_blank" class="providers-link prov w-inline-block"></a>
+    <link rel="prefetch"  href="https://cricbuzzer.io/#/dash">
+  </div>
 
 
-<!-- Contact us -->
+  <!-- Contact us -->
 
-<div class="contact-section">
-  <div class="gradient"></div>
-  <div class="shad"></div>
-  <div data-poster-url="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-poster-00001.jpg"
+  <div class="contact-section">
+    <div class="gradient"></div>
+    <div class="shad"></div>
+    <div
+      data-poster-url="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-poster-00001.jpg"
       data-video-urls="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.mp4,https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.webm"
       data-autoplay="true" data-loop="true" data-wf-ignore="true" data-beta-bgvideo-upgrade="false"
       class="earth-video w-background-video w-background-video-atom"><video
-          id="3e30a863-d369-ad3c-6ba9-50a9f76e94b3-video" autoplay="" loop=""
-          style="background-image:url(&quot;https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-poster-00001.jpg&quot;)"
-          muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-          <source
-              src="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.mp4"
-              data-wf-ignore="true">
-          <source
-              src="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.webm"
-              data-wf-ignore="true">
+        id="3e30a863-d369-ad3c-6ba9-50a9f76e94b3-video" autoplay="" loop=""
+        style="background-image:url(&quot;https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-poster-00001.jpg&quot;)"
+        muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+        <source
+          src="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.mp4"
+          data-wf-ignore="true">
+        <source
+          src="https://assets-global.website-files.com/61112348aee4848e30506466/64cba56ea485949d7dfcd6de_Earth_2office_v02-transcode.webm"
+          data-wf-ignore="true">
       </video></div>
-  <div class="contact-us">
+    <div class="contact-us">
       <h1 class="_72-heading white centered"
-          style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
-          Contact <span class="greenspan">us</span></h1>
-  </div>
-  <div class="formwrapper--2 contact-us">
+        style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+        Contact <span class="greenspan">us</span></h1>
+    </div>
+    <div class="formwrapper--2 contact-us">
       <div class="form-block w-form">
-          <form id="wf-form-Email-Form-Contact-Us" name="wf-form-Email-Form-Contact-Us"
-              data-name="Email Form Contact Us" method="get" class="form"
-              data-wf-page-id="6141b0ec541d3093260888d6" data-wf-element-id="671ad637-ece5-33e0-b85d-3a770b92d542"
-              aria-label="Email Form Contact Us">
-              <div class="form-fields"><input type="text" class="field w-input" maxlength="256" name="Name"
-                      data-name="Name" placeholder="your Name" id="Name-3" required=""><select
-                      id="Select-a-question" name="Select-a-question" data-name="Select a question" required=""
-                      class="input_field hear w-select">
-                      <option value="" class="option">Select a question</option>
-                      <option value="B2B REQUEST" class="option">B2B REQUEST</option>
-                      <option value="PAYMENTS" class="option">PAYMENTS</option>
-                      <option value="SOFTWARE" class="option">SOFTWARE</option>
-                      <option value="CAREER" class="option">CAREER</option>
-                      <option value="PR OR MARKETING QUERIES" class="option">PR OR MARKETING QUERIES</option>
-                      <option value="OTHER QUESTIONS" class="option">OTHER QUESTIONS</option>
-                  </select><input type="email" class="text-field-3 w-input" maxlength="256" name="Email"
-                      data-name="Email" placeholder="Email" id="Email-4" required=""><select
-                      id="how-did-you-hear-about-us" name="how-did-you-hear-about-us"
-                      data-name="how did you hear about us?" required="" class="input_field hear w-select">
-                      <option value="" class="option">how did you hear about us?</option>
-                      <option value="Google" class="option">Google</option>
-                      <option value="LinkedIn" class="option">LinkedIn</option>
-                      <option value="Media" class="option">Media</option>
-                      <option value="Events" class="option">Events</option>
-                      <option value="A Friend" class="option">A Friend</option>
-                      <option value="Other" class="option">Other</option>
-                  </select>
-                  <div class="telwrapper _50">
-                      <div class="w-embed"><input type="hidden" name="Dial code" id="dialCode" class="dialCode"
-                              value="+91"></div>
-                      <!-- <div class="w-embed"><span id="valid-msg" class="hide">Valid number</span>
+        <form id="wf-form-Email-Form-Contact-Us" name="wf-form-Email-Form-Contact-Us" data-name="Email Form Contact Us"
+          method="get" class="form" data-wf-page-id="6141b0ec541d3093260888d6"
+          data-wf-element-id="671ad637-ece5-33e0-b85d-3a770b92d542" aria-label="Email Form Contact Us">
+          <div class="form-fields"><input type="text" class="field w-input" maxlength="256" name="Name" data-name="Name"
+              placeholder="your Name" id="Name-3" required=""><select id="Select-a-question" name="Select-a-question"
+              data-name="Select a question" required="" class="input_field hear w-select">
+              <option value="" class="option">Select a question</option>
+              <option value="B2B REQUEST" class="option">B2B REQUEST</option>
+              <option value="PAYMENTS" class="option">PAYMENTS</option>
+              <option value="SOFTWARE" class="option">SOFTWARE</option>
+              <option value="CAREER" class="option">CAREER</option>
+              <option value="PR OR MARKETING QUERIES" class="option">PR OR MARKETING QUERIES</option>
+              <option value="OTHER QUESTIONS" class="option">OTHER QUESTIONS</option>
+            </select><input type="email" class="text-field-3 w-input" maxlength="256" name="Email" data-name="Email"
+              placeholder="Email" id="Email-4" required=""><select id="how-did-you-hear-about-us"
+              name="how-did-you-hear-about-us" data-name="how did you hear about us?" required=""
+              class="input_field hear w-select">
+              <option value="" class="option">how did you hear about us?</option>
+              <option value="Google" class="option">Google</option>
+              <option value="LinkedIn" class="option">LinkedIn</option>
+              <option value="Media" class="option">Media</option>
+              <option value="Events" class="option">Events</option>
+              <option value="A Friend" class="option">A Friend</option>
+              <option value="Other" class="option">Other</option>
+            </select>
+            <div class="telwrapper _50">
+              <div class="w-embed"><input type="hidden" name="Dial code" id="dialCode" class="dialCode" value="+91">
+              </div>
+              <!-- <div class="w-embed"><span id="valid-msg" class="hide">Valid number</span>
                           <span id="error-msg" class="hide"></span>
                       </div> -->
-                  </div><textarea id="Message" name="Message" maxlength="5000" data-name="Message"
-                      placeholder="Message" class="message contacts w-input"></textarea>
-              </div>
-              <div class="check-button"><input type="submit" value="Send" data-wait="Please wait..."
-                      class="transparent-button no-margin w-button"></div>
-          </form>
-         
+            </div><textarea id="Message" name="Message" maxlength="5000" data-name="Message" placeholder="Message"
+              class="message contacts w-input"></textarea>
+          </div>
+          <div class="check-button"><input type="submit" value="Send" data-wait="Please wait..."
+              class="transparent-button no-margin w-button"></div>
+        </form>
+
       </div>
-  </div>
-  <div class="contact-bottom">
+    </div>
+    <div class="contact-bottom">
       <div class="contact-wrapper socials-contact">
-          <div class="menu-socials"><a href="https://www.linkedin.com/company/soft2bet"
-                  class="socials-link big w-inline-block"></a><a href="https://www.instagram.com/soft2bet_group/"
-                  class="socials-link insta big w-inline-block"></a><a
-                  href="https://www.facebook.com/Soft2Bet-104799147813683/"
-                  class="socials-link fb big w-inline-block"></a><a
-                  href="https://www.youtube.com/channel/UCHFtbkvyyfRDjONsW1exoEw"
-                  class="socials-link youtube big last w-inline-block"></a></div>
+        <div class="menu-socials"><a href="https://www.linkedin.com/company/soft2bet"
+            class="socials-link big w-inline-block"></a><a href="https://www.instagram.com/soft2bet_group/"
+            class="socials-link insta big w-inline-block"></a><a
+            href="https://www.facebook.com/Soft2Bet-104799147813683/" class="socials-link fb big w-inline-block"></a><a
+            href="https://www.youtube.com/channel/UCHFtbkvyyfRDjONsW1exoEw"
+            class="socials-link youtube big last w-inline-block"></a></div>
       </div>
-     
+
+    </div>
   </div>
-</div>
 
 
 
 
-<!-- footer -->
+  <!-- footer -->
 
-<footer class="footer-sec">
-  <div class="main">
+  <footer class="footer-sec">
+    <div class="main">
 
-    <div class="logo row">
-      <div class="footer-header">
-        <img src="https://i.postimg.cc/tgk8X2w7/manik-low-resolution-logo-white-on-transparent-background.png" class="manik" alt="">
-      </div>
-      <div class="logo-des">
-        <p>VRNL is the best sports online betting whitelabel provider in India and Bangladesh | Betfair Api provider |Casino provider.</p>
-
-        <a href="#" class="btn-know">Know More</a>
-      </div>
-
-    </div>
-
-    <div class="office row">
-      <div class="footer-header">
-        <h3>Office</h3>
-      </div>
-      <div class="office-des">
-        <p>here are <br> many variations of passages<br>of Lorem Ipsum<br>available</p>
-
-        <a href="#"></a>
-
-        <p class="num">+91-9999999999</p>
-      </div>
-    </div>
-
-    <div class="link row">
-      <div class="footer-header">
-        <h3>Links</h3>
-      </div>
-
-      <div class="link-des">
-        <a href="#" class="footer-links">Home</a>
-        <a href="#" class="footer-links">About</a>
-        <a href="#" class="footer-links">Services</a>
-        <a href="#" class="footer-links">Galary</a>
-        <a href="#" class="footer-links">Contact</a>
-      </div>
-
-    </div>
-
-    <div class="newsletter row">
-      <div class="footer-header">
-        <h3>Newsletter</h3>
-      </div>
-      <div class="newsletter-des">
-        <div class="subcribe"><i class="sub-icon ri-mail-check-fill"></i>
-          <input type="mail" placeholder="Enter Email ID" required>
-          <i class="sub-icon ri-arrow-right-line"></i>
+      <div class="logo row">
+        <div class="footer-header">
+          <img src="https://i.postimg.cc/tgk8X2w7/manik-low-resolution-logo-white-on-transparent-background.png"
+            class="manik" alt="">
         </div>
-        <div class="icons">
-          <a href="#"><i class="social-icon ri-facebook-fill"></i></a>
-          <a href="#"><i class="social-icon ri-instagram-line"></i></a>
-          <a href="#"><i class="social-icon ri-linkedin-fill"></i></a>
-          <a href="#"><i class="social-icon ri-github-line"></i></a>
+        <div class="logo-des">
+          <p>VRNL is the best sports online betting whitelabel provider in India and Bangladesh | Betfair Api provider
+            |Casino provider.</p>
 
+          <a href="#" class="btn-know">Know More</a>
+        </div>
+
+      </div>
+
+      <div class="office row">
+        <div class="footer-header">
+          <h3>Office</h3>
+        </div>
+        <div class="office-des">
+          <p>here are <br> many variations of passages<br>of Lorem Ipsum<br>available</p>
+
+          <a href="#"></a>
+
+          <p class="num">+91-9999999999</p>
         </div>
       </div>
+
+      <div class="link row">
+        <div class="footer-header">
+          <h3>Links</h3>
+        </div>
+
+        <div class="link-des">
+          <a href="#" class="footer-links">Home</a>
+          <a href="#" class="footer-links">About</a>
+          <a href="#" class="footer-links">Services</a>
+          <a href="#" class="footer-links">Galary</a>
+          <a href="#" class="footer-links">Contact</a>
+        </div>
+
+      </div>
+
+      <div class="newsletter row">
+        <div class="footer-header">
+          <h3>Newsletter</h3>
+        </div>
+        <div class="newsletter-des">
+          <div class="subcribe"><i class="sub-icon ri-mail-check-fill"></i>
+            <input type="mail" placeholder="Enter Email ID" required>
+            <i class="sub-icon ri-arrow-right-line"></i>
+          </div>
+          <div class="icons">
+            <a href="#"><i class="social-icon ri-facebook-fill"></i></a>
+            <a href="#"><i class="social-icon ri-instagram-line"></i></a>
+            <a href="#"><i class="social-icon ri-linkedin-fill"></i></a>
+            <a href="#"><i class="social-icon ri-github-line"></i></a>
+
+          </div>
+        </div>
+      </div>
+
     </div>
+    <div class="copyright">
+      <hr>
 
-  </div>
-  <div class="copyright">
-    <hr>
+      <p>© Copyright 2022 Vrnl.</p>
+    </div>
+  </footer>
 
-    <p>© Copyright 2022 Vrnl.</p>
-  </div>
-</footer>
-    
-  
-  <script
-  src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6514bebbe03b09dad031f32e"
-  type="text/javascript"
-  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-  crossorigin="anonymous"
-></script>
+
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6514bebbe03b09dad031f32e"
+    type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
 
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.min.js"></script>
 
 
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
-  integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
+    integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 
 
-<script>
-  function checkPath() {
-    // Check if the .w-nav-button has class w--open
-    if (
-      $(".w-nav-button").hasClass("w--open") &&
-      window.location.pathname === "/"
-    ) {
-      $(".w-nav-button").click();
-    }
-  }
-
-  $(function () {
-    $(".input-wrapper").on("click", function () {
-      $(this).find("input").focus();
-    });
-    $(".nav__link--large, .nav-button .button").on("click", checkPath);
-    // $('.weglot-container.wg-default').remove();
-    function moveWeglot() {
-      const weglot = $(".weglot_here");
-      if ($(window).width() <= 991) {
-        $(".language-switcher--mobile").append(weglot);
-      } else {
-        $(".language-switcher--desktop").append(weglot);
+  <script>
+    function checkPath() {
+      // Check if the .w-nav-button has class w--open
+      if (
+        $(".w-nav-button").hasClass("w--open") &&
+        window.location.pathname === "/"
+      ) {
+        $(".w-nav-button").click();
       }
     }
 
-    $(moveWeglot);
-    $(window).on("resize", moveWeglot);
-
-    $(".nav").removeClass("close");
-  });
-
-  // Capabilities
-  $(".cpb--wrapper.m--show .cpb__item").on("click", function () {
-    $(this).toggleClass("open");
-  });
-
-  function runIntroSplit(elem) {
-    // Execute the updateText function when the document is ready
-    updateText();
-    let splittingElement = [elem];
-    splittingElement.forEach(function (splitting_el) {
-      Splitting({
-        target: splitting_el,
-        by: "chars",
+    $(function () {
+      $(".input-wrapper").on("click", function () {
+        $(this).find("input").focus();
       });
-    });
-
-    let elements = Array.from(document.querySelectorAll(elem));
-    let index = elements.findIndex((element) =>
-      element.classList.contains("start")
-    );
-
-    // If no element has the 'start' class, start from the first element
-    if (index === -1) {
-      index = 0;
-    }
-
-    function cycleClasses() {
-      if (elements.length > 0) {
-        elements.forEach((element) => element.classList.remove("start"));
-
-        elements[index].classList.add("start");
-
-        index = (index + 1) % elements.length;
-      }
-    }
-
-    cycleClasses();
-
-    setInterval(cycleClasses, 5000);
-  }
-  runIntroSplit(".heading--intro");
-
-  //count and set indexes
-  function animElements() {
-    const COUNT_ELEMENTS = [
-      ".cpb__item",
-      ".cpb__item--more",
-      ".company-item",
-    ];
-    const WAYPOINT_ELEMENTS = [...COUNT_ELEMENTS];
-
-    // Count and set indexes
-    COUNT_ELEMENTS.forEach(function (count_el) {
-      let comparison = [];
-      let count = 0;
-      document.querySelectorAll(count_el).forEach(function (el, i) {
-        comparison.push(el.getBoundingClientRect().top);
-        let difference = comparison[i] - comparison[i - 1];
-        if (difference > 10) {
-          count = 0;
+      $(".nav__link--large, .nav-button .button").on("click", checkPath);
+      // $('.weglot-container.wg-default').remove();
+      function moveWeglot() {
+        const weglot = $(".weglot_here");
+        if ($(window).width() <= 991) {
+          $(".language-switcher--mobile").append(weglot);
+        } else {
+          $(".language-switcher--desktop").append(weglot);
         }
-        el.style.setProperty("--index", count);
-        count++;
-      });
+      }
+
+      $(moveWeglot);
+      $(window).on("resize", moveWeglot);
+
+      $(".nav").removeClass("close");
     });
 
-    // Waypoints
-    WAYPOINT_ELEMENTS.forEach(function (waypoint_el) {
-      document.querySelectorAll(waypoint_el).forEach(function (el) {
-        el.classList.add("animated");
-        new Waypoint({
-          element: el,
-          handler: function () {
-            el.classList.add("start");
-            this.destroy();
-          },
-          offset: "90%",
-        });
-      });
-    });
-  }
-
-  animElements();
-
-  // Footer Slider
-  document
-    .querySelector(".slider-button.left")
-    .addEventListener("click", function () {
-      scrollSocialMediaList(-1); // Scroll left
-    });
-
-  document
-    .querySelector(".slider-button.right")
-    .addEventListener("click", function () {
-      scrollSocialMediaList(1); // Scroll right
-    });
-
-  function scrollSocialMediaList(direction) {
-    const list = document.querySelector(".social-media-list");
-    const item = document.querySelector(".social-media-item-wrapper");
-
-    const style = getComputedStyle(list);
-    const gap = parseFloat(style.getPropertyValue("gap") || "0px");
-    const scrollAmount = item.offsetWidth + gap;
-
-    list.scrollBy({
-      top: 0,
-      left: scrollAmount * direction,
-      behavior: "smooth",
-    });
-  }
-
-  //weglot hack for translating
-  Weglot.on("languageChanged", function (newLang, prevLang) {
-    let language = getPreferredLanguage();
-    if (prevLang != "") location.reload();
-  });
-
-  // fix for mobile to stop language click from closing menu
-  $(function () {
-    $(".weglot_switcher.country-selector.wg-drop")
-      .eq(0)
-      .on("click", function (e) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-      });
-  });
-
-  //copyright year
-  $(() => {
-    $("[data-year]").text(new Date().getFullYear());
-  });
-</script>
-
-
-
-
-
-
-
-<script>
-  $(function () {
-    const fadeInEls = [
-      ".intro-heading-wrapper",
-      ".intro-content-wrapper",
-      ".bg-video",
-    ];
-
-    fadeInEls.forEach(function (selector) {
-      document.querySelectorAll(selector).forEach(function (el) {
-        new Waypoint({
-          element: el,
-          handler: function () {
-            this.element.classList.add("start");
-          },
-          offset: "100%",
-        });
-      });
-    });
-  });
-
-  $(".team-tab").on("click", function () {
-    el = $(this);
-    if (el.hasClass("last")) {
-      el.css("border-left", "1px solid transparent");
-      $(".team-tab.first").css(
-        "border-right",
-        "1px solid var(--light-grey)"
-      );
-    } else if (el.hasClass("first")) {
-      el.css("border-right", "1px solid transparent");
-      $(".team-tab.last").css("border-left", "1px solid var(--light-grey)");
-    } else {
-      $(".team-tab.first").css(
-        "border-right",
-        "1px solid var(--tech-green)"
-      );
-      $(".team-tab.last").css("border-left", "1px solid var(--tech-green)");
-    }
-  });
-
-  $(".team-member").on("click", function () {
-    if (window.innerWidth < 992) {
+    // Capabilities
+    $(".cpb--wrapper.m--show .cpb__item").on("click", function () {
       $(this).toggleClass("open");
+    });
+
+    function runIntroSplit(elem) {
+      // Execute the updateText function when the document is ready
+      updateText();
+      let splittingElement = [elem];
+      splittingElement.forEach(function (splitting_el) {
+        Splitting({
+          target: splitting_el,
+          by: "chars",
+        });
+      });
+
+      let elements = Array.from(document.querySelectorAll(elem));
+      let index = elements.findIndex((element) =>
+        element.classList.contains("start")
+      );
+
+      // If no element has the 'start' class, start from the first element
+      if (index === -1) {
+        index = 0;
+      }
+
+      function cycleClasses() {
+        if (elements.length > 0) {
+          elements.forEach((element) => element.classList.remove("start"));
+
+          elements[index].classList.add("start");
+
+          index = (index + 1) % elements.length;
+        }
+      }
+
+      cycleClasses();
+
+      setInterval(cycleClasses, 5000);
     }
-  });
+    runIntroSplit(".heading--intro");
 
-  /*
-function outputBasedOnDevice() {
-  if (window.innerWidth > 767) {
-    return 1000;
-  }
-  else {
-    return 6;
-  }
-}
+    //count and set indexes
+    function animElements() {
+      const COUNT_ELEMENTS = [
+        ".cpb__item",
+        ".cpb__item--more",
+        ".company-item",
+      ];
+      const WAYPOINT_ELEMENTS = [...COUNT_ELEMENTS];
 
-  function hideAnimation(el) {
-    $(el).fadeOut()
-  }
+      // Count and set indexes
+      COUNT_ELEMENTS.forEach(function (count_el) {
+        let comparison = [];
+        let count = 0;
+        document.querySelectorAll(count_el).forEach(function (el, i) {
+          comparison.push(el.getBoundingClientRect().top);
+          let difference = comparison[i] - comparison[i - 1];
+          if (difference > 10) {
+            count = 0;
+          }
+          el.style.setProperty("--index", count);
+          count++;
+        });
+      });
 
-  function showAnimation(el) {
-    $(el).fadeIn()
+      // Waypoints
+      WAYPOINT_ELEMENTS.forEach(function (waypoint_el) {
+        document.querySelectorAll(waypoint_el).forEach(function (el) {
+          el.classList.add("animated");
+          new Waypoint({
+            element: el,
+            handler: function () {
+              el.classList.add("start");
+              this.destroy();
+            },
+            offset: "90%",
+          });
+        });
+      });
+    }
+
+    animElements();
+
+    // Footer Slider
+    document
+      .querySelector(".slider-button.left")
+      .addEventListener("click", function () {
+        scrollSocialMediaList(-1); // Scroll left
+      });
+
+    document
+      .querySelector(".slider-button.right")
+      .addEventListener("click", function () {
+        scrollSocialMediaList(1); // Scroll right
+      });
+
+    function scrollSocialMediaList(direction) {
+      const list = document.querySelector(".social-media-list");
+      const item = document.querySelector(".social-media-item-wrapper");
+
+      const style = getComputedStyle(list);
+      const gap = parseFloat(style.getPropertyValue("gap") || "0px");
+      const scrollAmount = item.offsetWidth + gap;
+
+      list.scrollBy({
+        top: 0,
+        left: scrollAmount * direction,
+        behavior: "smooth",
+      });
+    }
+
+    //weglot hack for translating
+    Weglot.on("languageChanged", function (newLang, prevLang) {
+      let language = getPreferredLanguage();
+      if (prevLang != "") location.reload();
+    });
+
+    // fix for mobile to stop language click from closing menu
+    $(function () {
+      $(".weglot_switcher.country-selector.wg-drop")
+        .eq(0)
+        .on("click", function (e) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        });
+    });
+
+    //copyright year
+    $(() => {
+      $("[data-year]").text(new Date().getFullYear());
+    });
+  </script>
+
+
+
+
+
+
+
+  <script>
+    $(function () {
+      const fadeInEls = [
+        ".intro-heading-wrapper",
+        ".intro-content-wrapper",
+        ".bg-video",
+      ];
+
+      fadeInEls.forEach(function (selector) {
+        document.querySelectorAll(selector).forEach(function (el) {
+          new Waypoint({
+            element: el,
+            handler: function () {
+              this.element.classList.add("start");
+            },
+            offset: "100%",
+          });
+        });
+      });
+    });
+
+    $(".team-tab").on("click", function () {
+      el = $(this);
+      if (el.hasClass("last")) {
+        el.css("border-left", "1px solid transparent");
+        $(".team-tab.first").css(
+          "border-right",
+          "1px solid var(--light-grey)"
+        );
+      } else if (el.hasClass("first")) {
+        el.css("border-right", "1px solid transparent");
+        $(".team-tab.last").css("border-left", "1px solid var(--light-grey)");
+      } else {
+        $(".team-tab.first").css(
+          "border-right",
+          "1px solid var(--tech-green)"
+        );
+        $(".team-tab.last").css("border-left", "1px solid var(--tech-green)");
+      }
+    });
+
+    $(".team-member").on("click", function () {
+      if (window.innerWidth < 992) {
+        $(this).toggleClass("open");
+      }
+    });
+
+    /*
+  function outputBasedOnDevice() {
+    if (window.innerWidth > 767) {
+      return 1000;
+    }
+    else {
+      return 6;
+    }
   }
   
-  window.pcms = new PandaCMS()
-  window.pcms_pagination = pcms.enablePagination(outputBasedOnDevice())
- */
-  document.addEventListener("DOMContentLoaded", function () {
-    let currentCount = window.innerWidth > 767 ? 100 : 6;
-    const elements = Array.from(
-      document.querySelectorAll('[data-el="true"]')
-    );
+    function hideAnimation(el) {
+      $(el).fadeOut()
+    }
+  
+    function showAnimation(el) {
+      $(el).fadeIn()
+    }
+    
+    window.pcms = new PandaCMS()
+    window.pcms_pagination = pcms.enablePagination(outputBasedOnDevice())
+   */
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentCount = window.innerWidth > 767 ? 100 : 6;
+      const elements = Array.from(
+        document.querySelectorAll('[data-el="true"]')
+      );
 
-    function toggleLessButton() {
+      function toggleLessButton() {
+        document
+          .querySelector(".company-pagination-btn.less")
+          .classList.toggle("hide", currentCount <= 6);
+      }
+
+      function toggleMoreButton() {
+        const moreButton = document.querySelector(
+          ".company-pagination-btn.more"
+        );
+        const lessButton = document.querySelector(
+          ".company-pagination-btn.less"
+        );
+
+        if (currentCount >= elements.length) {
+          moreButton.classList.add("hide");
+          lessButton.classList.add("border");
+        } else {
+          moreButton.classList.remove("hide");
+          lessButton.classList.remove("border");
+        }
+      }
+
+      function updateElementsDisplay(shouldScroll = false) {
+        let lastVisibleElement = null;
+
+        for (let i = 0; i < elements.length; i++) {
+          if (i < currentCount) {
+            elements[i].style.display = "flex";
+            lastVisibleElement = elements[i];
+          } else {
+            elements[i].style.display = "none";
+          }
+        }
+
+        if (shouldScroll && lastVisibleElement) {
+          lenis.scrollTo(lastVisibleElement, { offset: -600 });
+        }
+
+        toggleLessButton();
+        toggleMoreButton();
+      }
+
       document
         .querySelector(".company-pagination-btn.less")
-        .classList.toggle("hide", currentCount <= 6);
-    }
+        .addEventListener("click", function () {
+          currentCount = Math.max(currentCount - 6, 6);
+          updateElementsDisplay(true);
+        });
 
-    function toggleMoreButton() {
-      const moreButton = document.querySelector(
-        ".company-pagination-btn.more"
-      );
-      const lessButton = document.querySelector(
-        ".company-pagination-btn.less"
-      );
-
-      if (currentCount >= elements.length) {
-        moreButton.classList.add("hide");
-        lessButton.classList.add("border");
-      } else {
-        moreButton.classList.remove("hide");
-        lessButton.classList.remove("border");
-      }
-    }
-
-    function updateElementsDisplay(shouldScroll = false) {
-      let lastVisibleElement = null;
-
-      for (let i = 0; i < elements.length; i++) {
-        if (i < currentCount) {
-          elements[i].style.display = "flex";
-          lastVisibleElement = elements[i];
-        } else {
-          elements[i].style.display = "none";
-        }
-      }
-
-      if (shouldScroll && lastVisibleElement) {
-        lenis.scrollTo(lastVisibleElement, { offset: -600 });
-      }
+      document
+        .querySelector(".company-pagination-btn.more")
+        .addEventListener("click", function () {
+          if (currentCount < elements.length) {
+            currentCount = Math.min(currentCount + 6, elements.length);
+            updateElementsDisplay(true);
+          }
+        });
 
       toggleLessButton();
       toggleMoreButton();
+      updateElementsDisplay();
+    });
+  </script>
+  <script>
+    function showsidebar() {
+      const side = document.querySelector('.sidebar')
+      side.style.display = 'flex'
     }
-
-    document
-      .querySelector(".company-pagination-btn.less")
-      .addEventListener("click", function () {
-        currentCount = Math.max(currentCount - 6, 6);
-        updateElementsDisplay(true);
-      });
-
-    document
-      .querySelector(".company-pagination-btn.more")
-      .addEventListener("click", function () {
-        if (currentCount < elements.length) {
-          currentCount = Math.min(currentCount + 6, elements.length);
-          updateElementsDisplay(true);
-        }
-      });
-
-    toggleLessButton();
-    toggleMoreButton();
-    updateElementsDisplay();
-  });
-</script>
-<script>
-  function showsidebar(){
+    function hideshow() {
       const side = document.querySelector('.sidebar')
-      side.style.display='flex'
-  }
-  function hideshow(){
-      const side = document.querySelector('.sidebar')
-      side.style.display='none'
-  }
-</script>
+      side.style.display = 'none'
+    }
+  </script>
 
 
-  </body>
+</body>
+
 </html>
