@@ -265,7 +265,7 @@ blockquote {
 
 .intro-content-text {
   color: var(--white);
-  margin-bottom: 1.25rem;
+  margin-bottom: 12.25rem;
   font-size: 1em;
   font-weight: 500;
   line-height: 150%;
@@ -4352,13 +4352,6 @@ blockquote {
   max-width: 28.75rem;
 }
 
-.intro-content-text {
-  color: var(--white);
-  margin-bottom: 1.25rem;
-  font-size: 1em;
-  font-weight: 500;
-  line-height: 150%;
-}
 
  .bg-video {
   z-index: 1;
