@@ -1,0 +1,65 @@
+<svg width="1376" height="1444" viewBox="0 0 1376 1444" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b)">
+<rect width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect y="824" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect y="206" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1374" y="206" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect y="1030" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect y="412" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1374" y="412" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect y="1236" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect y="618" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1374" y="556" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect y="1442" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="229" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="229" y="824" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="229" y="206" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="229" y="1030" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="229" y="412" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="229" y="1236" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="229" y="618" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="229" y="1442" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="458" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="458" y="824" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="458" y="206" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="458" y="1030" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="458" y="412" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="458" y="1236" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="458" y="618" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="458" y="1442" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="687" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="687" y="824" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="687" y="206" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="687" y="1030" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="687" y="412" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="687" y="1236" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="687" y="618" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="687" y="1442" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="916" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="916" y="824" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="916" y="206" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="916" y="1030" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="916" y="412" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="916" y="1236" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="916" y="618" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="916" y="1442" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1145" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1145" y="824" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1145" y="206" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1145" y="1030" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1145" y="412" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1145" y="1236" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1145" y="618" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1145" y="1442" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1374" width="2" height="2" rx="1" fill="#FDFDFD"/>
+<rect x="1374" y="824" width="2" height="2" rx="1" fill="#FDFDFD"/>
+</g>
+<defs>
+<filter id="filter0_b" x="-14" y="-14" width="1404" height="1472" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImage" stdDeviation="7"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+</filter>
+</defs>
+</svg>
