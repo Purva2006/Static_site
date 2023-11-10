@@ -1698,7 +1698,8 @@ svg path, svg ellipse, svg rect {
   transition: fill .4s;
 }
 .solutions {
-  background: #edfbf5 !important;
+  /* background: #edfbf5 !important; */
+  background-color: #0a120f !important;
   padding-top: 2.5vw;
 }
       .sub-title-row {
@@ -5549,7 +5550,7 @@ input#checkboxLabel:checked~.box span {
 
 .nf {
   --tw-bg-opacity: 1;
-  background-color: rgb(245 248 255/var(--tw-bg-opacity))
+  background-color:#8aeab9
 }
 
 .of {
@@ -5959,7 +5960,7 @@ input#checkboxLabel:checked~.box span {
 
 .xi {
   --tw-text-opacity: 1;
-  color: rgb(99 115 129/var(--tw-text-opacity))
+  color: black
 }
 
 .yi {
