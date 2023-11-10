@@ -3813,12 +3813,15 @@ strong, b {
   margin-bottom: 0.094vw;
 }
 .sub-title-row h3 {
-  margin: 0;
-  color:#9eff00;
-  font-family: 'ibm_plex_sanslight';
-  font-size: var(--size16_vw);
-  line-height: 0.8vw;
-  text-transform: uppercase;
+  margin: 37px;
+    margin-left: 463px;
+    font-size: 50px;
+    color: #9eff00;
+    font-family: 'ibm_plex_sanslight';
+    font-size: 50px;
+    line-height: 0.8vw;
+    text-transform: uppercase;
+    marggin-top: 42px;
 }
 .elementor-widget-container1{
   position: absolute;
@@ -4094,6 +4097,18 @@ width: 100%;
       color: #ffffff;
 
   }
+
+  .sub-title-row h3 {
+    margin: 37px;
+    /* margin-left: 463px; */
+    font-size: 50px;
+    color: #9eff00;
+    font-family: 'ibm_plex_sanslight';
+    font-size: 50px;
+    line-height: 0.8vw;
+    text-transform: uppercase;
+    marggin-top: 42px;
+}
 
   .image-91 {
       max-width: 109%;
