@@ -80,8 +80,8 @@ svg path, svg ellipse, svg rect {
     transition: fill .4s;
 }
  .solutions {
-    background: #000000;
-    padding-top: 2.5vw;
+    background: #edfbf5 !important;
+  padding-top: 2.5vw;
 }
         .sub-title-row {
     position: relative;
@@ -415,6 +415,36 @@ svg path, svg ellipse, svg rect {
     width: 50%;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+@media screen and (max-width: 768px){
+    .elementor-widget-container img {
+        width: 75%;
+    }
+    .shapeMover1{
+        position: absolute;
+        top: -67px;
+        left: -100px;
+         -webkit-animation-duration:9s;
+          animation-duration: 9s;
+          -webkit-animation-name:shapeMover1;
+            animation-name:shapeMover1;
+             animation-iteration-count:infinite;
+    }
+} */
 
 
   

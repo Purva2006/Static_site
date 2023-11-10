@@ -2676,6 +2676,34 @@ i {
   }
 }
 
+@media (max-width: 991px) {
+  .col_header{
+width: 100% !important;
+  }
+  .navbar-nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .fa-bars {
+color: #4cbd89;
+font-size: 20px;
+  }
+  #navbarSupportedContent{
+    left: 0px !important;
+  }
+
+  .sol1{
+margin-left: 0px !important ;
+  }
+  button{
+    background-color: #000;
+  }
+  .head_col{
+    padding: 12px;
+  }
+}
 
 .rows_head{
     display: flex;
@@ -4359,7 +4387,7 @@ blockquote {
     margin-right: 0;
     display: flex;
     position: absolute;
-    top: -2%;
+    top: 1%;
     bottom: 0%;
     left: auto;
     right: 58px;
