@@ -2510,8 +2510,27 @@ body {
   margin: 0;
   padding: 0;
 }
+.navbar{
+height: 56px;
+}
 i {
   margin-right: 10px;
+}
+
+.abs{
+position: absolute;
+}
+.cd{
+left: 52%;
+}
+.ef{
+top: 15%;
+}
+.ghe{
+z-index: -10;
+}
+.ban_img{
+  opacity: 0.4;
 }
 /*----------bootstrap-navbar-css------------*/
 .hori-selector .right:before, .hori-selector .left:before {
@@ -2549,7 +2568,7 @@ i {
 #navbarSupportedContent ul li a {
   color: #4cbd89;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
   display: block;
   padding: 20px 20px;
   transition-duration: 0.6s;
@@ -4855,7 +4874,7 @@ input#checkboxLabel:checked~.box span {
 }
 
 .l {
-  left: 0
+  left: 2%
 }
 
 .m {
@@ -4863,7 +4882,7 @@ input#checkboxLabel:checked~.box span {
 }
 
 .n {
-  bottom: 0
+  bottom: 13%
 }
 
 .o {
