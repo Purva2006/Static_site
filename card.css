@@ -80,8 +80,8 @@ svg path, svg ellipse, svg rect {
     transition: fill .4s;
 }
  .solutions {
-    background: #000000;
-    padding-top: 2.5vw;
+    background: #edfbf5 !important;
+  padding-top: 2.5vw;
 }
         .sub-title-row {
     position: relative;
@@ -419,6 +419,21 @@ svg path, svg ellipse, svg rect {
 .elementor-widget-container img{
     width: 50%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 768px){
     .elementor-widget-container img {
