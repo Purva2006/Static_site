@@ -1697,11 +1697,10 @@ svg path, svg ellipse, svg rect {
   -moz-transition: fill .4s;
   transition: fill .4s;
 }
-.solutions {
-  /* background: #edfbf5 !important; */
+/* .solutions {
   background-color: #0a120f !important;
   padding-top: 2.5vw;
-}
+} */
       .sub-title-row {
   position: relative;
 }
@@ -1822,7 +1821,7 @@ svg path, svg ellipse, svg rect {
 }
 .arrow-link:hover{
   border: 2px solid #394f14 !important;
- background-color: #4f750d !important;
+ /* background-color: #4f750d !important; */
 }
 
 .fx-jc {

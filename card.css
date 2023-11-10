@@ -80,7 +80,7 @@ svg path, svg ellipse, svg rect {
     transition: fill .4s;
 }
  .solutions {
-    background: #edfbf5 !important;
+    background-color: #0a120f !important;
   padding-top: 2.5vw;
 }
         .sub-title-row {
