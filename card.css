@@ -79,10 +79,10 @@ svg path, svg ellipse, svg rect {
     -moz-transition: fill .4s;
     transition: fill .4s;
 }
- .solutions {
+ /* .solutions {
     background: #edfbf5 !important;
   padding-top: 2.5vw;
-}
+} */
         .sub-title-row {
     position: relative;
 }
@@ -114,7 +114,7 @@ svg path, svg ellipse, svg rect {
 .sl-graphic {
     width: 100%;
     position: relative;
-    height: 26.75vw;
+    height: 25.60vw;
     text-align: center;
     overflow: hidden;
 }
@@ -134,11 +134,11 @@ svg path, svg ellipse, svg rect {
 }.sl-box-video .vd-content {
     padding-bottom: 85%;
 }
-.sl-box-video * {
+/* .sl-box-video * {
     -webkit-border-radius: 2.188vw;
     -moz-border-radius: 2.188vw;
     border-radius: 2.188vw;
-}
+} */
 .vd-content {
     padding-bottom: 56.25%;
     position: relative;
@@ -398,6 +398,7 @@ svg path, svg ellipse, svg rect {
 }
 
 
+
 }
 .card-image{
     display: block;
@@ -555,6 +556,8 @@ svg path, svg ellipse, svg rect {
       .sl-info-row h4 {
         font-size: 4.5vw;
       }
+
+      
   }
   
 
